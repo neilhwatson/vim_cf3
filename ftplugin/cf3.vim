@@ -71,7 +71,8 @@ nmap ,k Obody common control {
 " Credit to 'Scripting the Vim editor, Part 2: User-defined functions'
 " by Damian Conway
 " http://www.ibm.com/developerworks/linux/library/l-vim-script-2/index.html
-function AlignAssignments ()
+if !exists("*CF3AlignAssignments")
+function CF3AlignAssignments ()
     "Patterns needed to locate assignment operators...
     let ASSIGN_OP   = '\(string\|int\|real\|slist\|ilist\|rlist\)* =>'
     let ASSIGN_LINE = '^\(.\{-}\)\s*\(' . ASSIGN_OP . '\)'
@@ -111,9 +112,9 @@ function AlignAssignments ()
         call setline(linenum, newline)
     endfor
 endfunction
+endif
 
-nmap <silent>  ,=  :call AlignAssignments()<CR>
-
+nmap <silent>  ,=  :call CF3AlignAssignments()<CR>
 
 " TODO
 " Folding
@@ -138,3 +139,18 @@ nmap <silent>  ,=  :call AlignAssignments()<CR>
 " CHANGES
 " Fri Apr 27 2012
 " Added function to align assigment operators
+
+" vim_cf3 files (https://github.com/neilhwatson/vim_cf3)
+" Copyright (C) 2011 Neil H. Watson <neil@watson-wilson.ca>
+" 
+" This program is free software: you can redistribute it and/or modify it under
+" the terms of the GNU General Public License as published by the Free Software
+" Foundation, either version 3 of the License, or (at your option) any later
+" version.
+" 
+" This program is distributed in the hope that it will be useful, but WITHOUT ANY
+" WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+" PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+" 
+" You should have received a copy of the GNU General Public License along with
+" this program.  If not, see <http://www.gnu.org/licenses/>.
