@@ -27,7 +27,7 @@ syn keyword TODO todo contained
 syn match   cf3Comment      /#.*/ contains=TODO
 syn match   cf3Identifier   /=>/
 " For actions e.g. reports:, commands:
-syn match   cf3Action       /[^:#]\+:\s*$/
+syn match   cf3Action       /\w\+:\s*$/
 syn match   cf3Class        /[^:#]\+::\s*$/
 " Escape sequences in regexes
 syn match   cf3Esc          /\\\\[sSdD+][\+\*]*/ contained
