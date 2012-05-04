@@ -1,11 +1,7 @@
 " Vim file plugin
-" Language:     Cfengine version 3
-" Maintainer:   Neil Watson <neil@watson-wilson.ca>
-" Last Change:  Fri Apr 27 2012
-" Location:
-"
-" This is my first attempt at a syntax file.  Feel free to send me correctsion
-" or improvements.  I'll give you a credit.
+
+" This is my first attempt at a ftplugin file.  Feel free to send me
+" correctsion or improvements.  I'll give you a credit.
 "
 " USAGE
 " There is already a vim file that uses 'cf' as a file extension.  You can use
@@ -33,8 +29,8 @@ iab var vars:
 iab ba bundle agent
 iab bc bundle common
 iab ub usebundle =>
-iab str string =>
-iab sli slist =>
+iab str string => "<C-R>=Eatchar('\s')<CR>
+iab sli slist => {
 
 " maps
 " Wrap WORD in double quotes

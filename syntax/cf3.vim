@@ -1,8 +1,4 @@
 " Vim syntax file
-" Language:     Cfengine version 3
-" Maintainer:   Neil Watson <neil@watson-wilson.ca>
-" Last Change:  Thursday September 23 2010 
-" Location:
 "
 " This is my first attempt at a syntax file.  Feel free to send me correctsion
 " or improvements.  I'll give you a credit.
@@ -22,7 +18,8 @@ endif
 
 syn case ignore
 syn keyword cf3BodyTypes agent common server executor reporter monitor runagent action classes contain copy_from delete delete_select depth_search edit_defaults file_select link_from perms process_count process_select rename contained
-syn match   cf3Body /^\s*body.*$/ contains=Cf3BodyTypes
+syn match   cf3Body /^\s*\(body\|bundle\)\s*\w\+/ contains=Cf3BodyTypes
+syn region	cf3Fold start="{" end="}" transparent fold
 syn keyword TODO todo contained
 syn match   cf3Comment      /#.*/ contains=TODO
 syn match   cf3Identifier   /=>/
@@ -61,6 +58,8 @@ if version >= 508 || !exists("did_cfg_syn_inits")
     delcommand HiLink
 endif
 let b:current_syntax = "cf3"
+
+set foldmethod=syntax
 
 " CREDITS
 " Neil Watson <neil@watson-wilson.ca>

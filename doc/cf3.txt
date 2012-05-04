@@ -52,6 +52,10 @@ ub usebundle =>
 str string =>
 sli slist =>
 
+*cf3folds*
+
+Does basic folding of body types using markers { and }.  See folds for normal commands.
+
 *cf3maps*
 
 Maps, type the first, in normal mode and get the following results.
