@@ -14,23 +14,69 @@ if exists("b:did_ftplugin")
 endif
 let b:did_ftplugin = 1
 
+
 " Abbreviations
-iab = =>
-iab bu bundle
-iab han handle => "<C-R>=Eatchar('\s')<CR>
-iab cla classes:
-iab comma commands:
-iab comme comment => "<C-R>=Eatchar('\s')<CR>
-iab fil files:
-iab met methods:
-iab pro processes:
-iab rep reports:
-iab var vars:
-iab ba bundle agent
-iab bc bundle common
-iab ub usebundle =>
-iab str string => "<C-R>=Eatchar('\s')<CR>
-iab sli slist => {
+" enable keyword abbreviations with by adding 
+" "let g:CFE3KeywordAbbreviations=1" to your vimrc
+" Conveniance function to toggle abbreviations off or on
+" ToggleCFE3KeywordAbbreviations
+" map it to a key
+" nnoremap <F12> :call ToggleCFE3KeywordAbbreviations()<CR>
+function! DisableCFE3KeywordAbbreviations()
+    iunab =
+    iunab bu
+    iunab han 
+    iunab cla
+    iunab comma
+    iunab comme
+    iunab fil
+    iunab met
+    iunab pro
+    iunab rep
+    iunab var
+    iunab ba
+    iunab bc
+    iunab ub
+    iunab str
+    iunab sli
+    echo "CFEngine 3 Keyword Abbriveations disabled"
+endfunction
+
+function! EnableCFE3KeywordAbbriveations()
+        iab = =>
+        iab bu bundle
+        iab han handle => "<C-R>=Eatchar('\s')<CR>
+        iab cla classes:
+        iab comma commands:
+        iab comme comment => "<C-R>=Eatchar('\s')<CR>
+        iab fil files:
+        iab met methods:
+        iab pro processes:
+        iab rep reports:
+        iab var vars:
+        iab ba bundle agent
+        iab bc bundle common
+        iab ub usebundle =>
+        iab str string => "<C-R>=Eatchar('\s')<CR>
+        iab sli slist => {
+        echo "CFEngine 3 Keyword Abbriveations enabled"
+endfunction
+
+function! ToggleCFE3KeywordAbbreviations()
+    if !exists('g:CFE3KeywordAbbreviations')
+        let g:CFE3KeywordAbbreviations=1
+        call EnableCFE3KeywordAbbriveations()
+    else
+        unlet g:CFE3KeywordAbbreviations
+        call DisableCFE3KeywordAbbreviations()
+    endif
+endfunction
+
+if !exists('g:CFE3KeywordAbbreviations')
+    call DisableCFE3KeywordAbbreviations()
+else
+    call EnableCFE3KeywordAbbriveations()
+endif
 
 " maps
 " Wrap WORD in double quotes
