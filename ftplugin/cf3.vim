@@ -70,7 +70,7 @@ nmap ,k Obody common control {
 if !exists("*CF3AlignAssignments")
 function CF3AlignAssignments ()
     "Patterns needed to locate assignment operators...
-    let ASSIGN_OP   = '\(string\|int\|real\|slist\|ilist\|rlist\)* =>'
+    let ASSIGN_OP   = '\(string\|int\|real\|slist\|ilist\|rlist\|expression\|and\|or\|not\|volume\)*\s\+=>'
     let ASSIGN_LINE = '^\(.\{-}\)\s*\(' . ASSIGN_OP . '\)'
 
     "Locate block of code to be considered (same indentation, no blanks)
