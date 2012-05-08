@@ -21,23 +21,23 @@ let b:did_ftplugin = 1
 " mapped to ,i by default to toggle abbreviations off or on
 "
 function! EnableCFE3KeywordAbbriveations()
-        iab = =>
-        iab bu bundle
-        iab han handle => "<C-R>=Eatchar('\s')<CR>
-        iab cla classes:
-        iab comma commands:
-        iab comme comment => "<C-R>=Eatchar('\s')<CR>
-        iab fil files:
-        iab met methods:
-        iab pro processes:
-        iab rep reports:
-        iab var vars:
-        iab ba bundle agent
-        iab bc bundle common
-        iab ub usebundle =>
-        iab str string => "<C-R>=Eatchar('\s')<CR>
-        iab sli slist => {
-        echo "CFEngine 3 Keyword Abbriveations enabled"
+    iab = =>
+    iab bu bundle
+    iab han handle => "<C-R>=Eatchar('\s')<CR>
+    iab cla classes:
+    iab comma commands:
+    iab comme comment => "<C-R>=Eatchar('\s')<CR>
+    iab fil files:
+    iab met methods:
+    iab pro processes:
+    iab rep reports:
+    iab var vars:
+    iab ba bundle agent
+    iab bc bundle common
+    iab ub usebundle =>
+    iab str string => "<C-R>=Eatchar('\s')<CR>
+    iab sli slist => {
+    echo "CFEngine 3 Keyword Abbriveations enabled"
 endfunction
 
 function! DisableCFE3KeywordAbbreviations()
