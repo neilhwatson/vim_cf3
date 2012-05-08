@@ -14,34 +14,12 @@ if exists("b:did_ftplugin")
 endif
 let b:did_ftplugin = 1
 
-
-" Abbreviations
-" enable keyword abbreviations with by adding 
-" "let g:CFE3KeywordAbbreviations=1" to your vimrc
-" Conveniance function to toggle abbreviations off or on
-" ToggleCFE3KeywordAbbreviations
-" map it to a key
-" nnoremap <F12> :call ToggleCFE3KeywordAbbreviations()<CR>
-function! DisableCFE3KeywordAbbreviations()
-    iunab =
-    iunab bu
-    iunab han 
-    iunab cla
-    iunab comma
-    iunab comme
-    iunab fil
-    iunab met
-    iunab pro
-    iunab rep
-    iunab var
-    iunab ba
-    iunab bc
-    iunab ub
-    iunab str
-    iunab sli
-    echo "CFEngine 3 Keyword Abbriveations disabled"
-endfunction
-
+" =============== Keyword Abbreviations  ===============
+" disable keyword abbreviations with by adding 
+" "let g:DisableCFE3KeywordAbbreviations=0" to your vimrc
+" Conveniance function ToggleCFE3KeywordAbbreviations
+" mapped to ,i by default to toggle abbreviations off or on
+"
 function! EnableCFE3KeywordAbbriveations()
         iab = =>
         iab bu bundle
@@ -62,23 +40,46 @@ function! EnableCFE3KeywordAbbriveations()
         echo "CFEngine 3 Keyword Abbriveations enabled"
 endfunction
 
+function! DisableCFE3KeywordAbbreviations()
+    iunab =
+    iunab bu
+    iunab han 
+    iunab cla
+    iunab comma
+    iunab comme
+    iunab fil
+    iunab met
+    iunab pro
+    iunab rep
+    iunab var
+    iunab ba
+    iunab bc
+    iunab ub
+    iunab str
+    iunab sli
+    echo "CFEngine 3 Keyword Abbriveations disabled"
+endfunction
+
+" Default abbreviations on
+" to disable let g:DisableCFE3KeywordAbbreviations=1 in ~/.vimrc
+if !exists('g:DisableCFE3KeywordAbbreviations')
+    let g:DisableCFE3KeywordAbbreviations=1
+    call EnableCFE3KeywordAbbriveations()
+endif
+
 function! ToggleCFE3KeywordAbbreviations()
-    if !exists('g:CFE3KeywordAbbreviations')
-        let g:CFE3KeywordAbbreviations=1
+    if !exists('g:DisableCFE3KeywordAbbreviations')
+        let g:DisableCFE3KeywordAbbreviations=1
         call EnableCFE3KeywordAbbriveations()
     else
-        unlet g:CFE3KeywordAbbreviations
+        unlet g:DisableCFE3KeywordAbbreviations
         call DisableCFE3KeywordAbbreviations()
     endif
 endfunction
 
-if !exists('g:CFE3KeywordAbbreviations')
-    call DisableCFE3KeywordAbbreviations()
-else
-    call EnableCFE3KeywordAbbriveations()
-endif
-
 " maps
+" Toggle KeywordAbbreviations
+nmap ,i :call ToggleCFE3KeywordAbbreviations()<CR>
 " Wrap WORD in double quotes
 nmap ,q dE<ESC>i"<ESC>pa"<ESC>
 " Insert blank promise
