@@ -8,6 +8,13 @@
 " cf3 for your cf3 file extensions or identify via your vimrc file:
 " au BufRead,BufNewFile *.cf set ft=cf3
 
+" Check to see if DisableCF3Ftplugin is defined
+" If you only want the syntax plugin add "let g:DisableCF3Ftplugin=1" in
+" ~/.vimrc
+if exists("g:DisableCF3Ftplugin")
+    finish
+endif
+
 " Only do this when not done yet for this buffer
 if exists("b:did_ftplugin")
   finish
