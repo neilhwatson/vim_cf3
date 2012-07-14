@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:     Cfengine version 3
 " Maintainer:   Neil Watson <neil@watson-wilson.ca>
-" Last Change:  Thursday September 23 2010 
+" Last Change:  Jul 14 2012
 " Location:
 "
 " TODO: 
@@ -9,8 +9,6 @@
 "	- would be great to know current promise type
 "	- attributes for main promises
 "	- attributes for bodies
-"	- errata: single braket [ inside string brakes highlighting 
-"	- errata: @(array) not in quotes doesn't get highlighted
 "
 " This is my first attempt at a syntax file.  Feel free to send me correctsion
 " or improvements.  I'll give you a credit.
@@ -319,9 +317,26 @@ if version >= 508 || !exists("did_cfg_syn_inits")
 endif
 let b:current_syntax = "cf3"
 
+set foldmethod=syntax
+
 " CREDITS
 " Neil Watson <neil@watson-wilson.ca>
 " Aleksey Tsalolikhin
 " John Coleman of Yale U
 " Matt Lesko
 " Ivan Pesin
+"
+" vim_cf3 files (https://github.com/neilhwatson/vim_cf3)
+" Copyright (C) 2011 Neil H. Watson <neil@watson-wilson.ca>
+" 
+" This program is free software: you can redistribute it and/or modify it under
+" the terms of the GNU General Public License as published by the Free Software
+" Foundation, either version 3 of the License, or (at your option) any later
+" version.
+" 
+" This program is distributed in the hope that it will be useful, but WITHOUT ANY
+" WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+" PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+" 
+" You should have received a copy of the GNU General Public License along with
+" this program.  If not, see <http://www.gnu.org/licenses/>.
