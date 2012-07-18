@@ -47,10 +47,15 @@ syn keyword cf3BodyTypes insert_select location edit_field replace_with containe
 syn keyword cf3BodyTypes common database_server environment_resources contained nextgroup=cf3BundleName skipwhite
 syn match   cf3Body /^\s*body\s\+/ nextgroup=Cf3BodyTypes skipwhite 
 
+syn match   cf3BodyControl /^\s*body\s\+\(common\|agent\|server\)\s\+control/  
+syn match   cf3BodyControl /^\s*body\s\+\(monitor\|runagent\)\s\+control/  
+syn match   cf3BodyControl /^\s*body\s\+\(executor\|knowledge\|hub\)\s\+control/  
+syn match   cf3BodyControl /^\s*body\s\+\(reporter\|file\)\s\+control/  
+
 syn match cf3Action /\<\(vars\|classes\|reports\):/
 syn match cf3Action /\<\(commands\|databases\|files\|interfaces\|methods\|packages\|storage\):/
-syn match cf3Action /\<\(access\|measurements\|roles\|topics\|occurences\):/
-syn match cf3Action /\<\(control\|environments\|outputs\|processes\|services\|things\):/
+syn match cf3Action /\<\(access\|measurements\|roles\|topics\|occurrences\|defaults\):/
+syn match cf3Action /\<\(control\|guest_environments\|outputs\|processes\|services\|things\):/
 syn match cf3Action /\<\(delete_lines\|field_edits\|insert_lines\|replace_patterns\):/
 
 syn match   cf3Class        /[^ "\t:#]\+::/
@@ -65,7 +70,7 @@ syn match   cf3Esc          /\\\\[sSdD+][\+\*]*/ contained
 " Array indexes contained in [].  Does not seems to be working.
 syn region  cf3Array        start=/\(\\\)\@<!\[/ end=/\]/ contained contains=cf3Var
 " Variables wrapped in {} or ()
-syn region  cf3Var          start=/[$\@][{(]/ end=/[})]/ contained contains=cf3Var,cf3Array
+syn region  cf3Var          start=/[$\@][{(]/ end=/[})]/ contains=cf3Var,cf3Array
 syn region  cf3String       start=/\z\("\|'\)/ skip=/\\\z1/ end=/\z1/ contains=cf3Var,cf3Esc,cf3Array
 
 syn keyword cf3Type			string int real slist ilist rlist policy
@@ -147,6 +152,15 @@ syn keyword cf3ProcessesAttr process_count process_select contained
 syn keyword cf3ProcessesAttr process_stop restart_class signals contained
 syn keyword cf3PackagesAttr	package_architectures package_method package_policy contained
 syn keyword cf3PackagesAttr	package_select package_version contained
+syn keyword cf3GuestEnvAttr	environment_host environment_interface contained
+syn keyword cf3GuestEnvAttr	environment_resources environment_state contained
+syn keyword cf3GuestEnvAttr	environment_type contained
+syn keyword cf3TopicsAttr	association synonyms generalizations contained
+syn keyword cf3ServicesAttr	service_policy service_dependencies service_method contained
+syn keyword cf3DatabasesAttr	database_server database_type contained
+syn keyword cf3DatabasesAttr	database_operation database_columns contained
+syn keyword cf3DatabasesAttr	database_rows registry_exclude contained
+syn keyword cf3DefaultsAttr	if_match_regex contained
 
 syn keyword cf3FilesAttr	acl changes copy_from create delete depth_search contained
 syn keyword cf3FilesAttr	edit_line edit_xml edit_defaults file_select contained
@@ -167,9 +181,9 @@ syn keyword cf3ProcSelectAttr 	process_result rsize status stime_range ttime_ran
 syn keyword cf3ProcSelectAttr   tty threads vsize contained
 syn keyword cf3EditDefAttr		edit_backup empty_file_before_editing max_file_size recognize_join contained
 syn keyword cf3LocationAttr 	before_after first_last select_line_matching contained
-syn keyword cf3FileSelectAttr 	leaf_name path_name search_mode search_size search_owners contained
-syn keyword cf3FileSelectAttr 	search_groups search_bsdflags ctime mtime atime contained
-syn keyword cf3FileSelectAttr 	exec_regex exec_program file_types issymlinkto file_result contained
+syn keyword cf3BodyFileSelectAttr 	leaf_name path_name search_mode search_size search_owners contained
+syn keyword cf3BodyFileSelectAttr 	search_groups search_bsdflags ctime mtime atime contained
+syn keyword cf3BodyFileSelectAttr 	exec_regex exec_program file_types issymlinkto file_result contained
 syn keyword cf3BodyClassesAttr 	promise_repaired repair_failed repair_denied contained
 syn keyword cf3BodyClassesAttr 	repair_timeout promise_kept cancel_kept cancel_repaired contained
 syn keyword cf3BodyClassesAttr 	cancel_notkept kept_returncodes repaired_returncodes contained
@@ -223,20 +237,23 @@ syn keyword cf3BodyEnvResourcesAttr	 env_cpus env_memory env_disk contained
 syn keyword cf3BodyEnvResourcesAttr	 env_baseline env_spec_file env_spec contained
 syn keyword cf3BodyMatchValueAttr	 select_line_matching select_line_number contained
 syn keyword cf3BodyMatchValueAttr	 extraction_regex track_growing_file contained
-
+syn keyword cf3BodyServiceMethodAttr	service_type service_args service_bundle contained
+syn keyword cf3BodyServiceMethodAttr	service_autostart_policy service_dependence_chain contained
 
 syn cluster cf3AttrCluster	contains=cf3CommonAttr,cf3ClassesAttr,cf3Identifier,cf3ProcessesAttr,cf3FilesAttr
-syn cluster cf3AttrCluster	add=cf3PackagesAttr
+syn cluster cf3AttrCluster	add=cf3PackagesAttr,cf3GuestEnvAttr,cf3TopicsAttr
 syn cluster cf3AttrCluster	add=cf3EditLineAttr,cf3EditFieldAttr,cf3ReplaceWithAttr
 syn cluster cf3AttrCluster	add=cf3SelectRegionAttr,cf3ProcCountAttr,cf3ProcSelectAttr
-syn cluster cf3AttrCluster	add=cf3EditDefAttr,cf3LocationAttr,cf3CommandsAttr,cf3FileSelectAttr
+syn cluster cf3AttrCluster	add=cf3EditDefAttr,cf3LocationAttr,cf3CommandsAttr,cf3BodyFileSelectAttr
 syn cluster cf3AttrCluster	add=cf3ControlAttr,cf3MethodAttr,cf3BodyClassesAttr
+syn cluster cf3AttrCluster	add=cf3ServicesAttr,cf3DatabasesAttr,cf3DefaultsAttr
+
 syn cluster cf3AttrCluster	add=cf3BodyLinkFromAttr,cf3BodyPermsAttr,cf3BodyACLAttr
 syn cluster cf3AttrCluster	add=cf3BodyDepthSearchAttr,cf3BodyDeleteAttr,cf3BodyRenameAttr
 syn cluster cf3AttrCluster	add=cf3BodyChangesAttr,cf3BodyPackageMethodAttr,cf3BodyActionAttr
 syn cluster cf3AttrCluster	add=cf3BodyContainAttr,cf3BodyCopyFromAttr,cf3BodyVolumeAttr
 syn cluster cf3AttrCluster	add=cf3BodyMountAttr,cf3BodyServiceMethodAttr,cf3BodyDatabaseServerAttr
-syn cluster cf3AttrCluster	add=cf3BodyEnvResourcesAttr,cf3BodyMatchValueAttr
+syn cluster cf3AttrCluster	add=cf3BodyEnvResourcesAttr,cf3BodyMatchValueAttr,cf3BodyServiceMethodAttr
 syn match	cf3Attributes	/\w\+\s*=>/ contains=@cf3AttrCluster
 
 
@@ -262,6 +279,10 @@ if version >= 508 || !exists("did_cfg_syn_inits")
 	HiLink cf3Body			Statement
 	HiLink cf3BodyTypes		Statement
     HiLink cf3Comment	    Comment
+	
+	HiLink cf3BodyControl	Statement
+	HiLink cf3BodyControlTypes	Statement
+	HiLink cf3BodyControlName	Statement
     
     HiLink cf3Action	   Underlined
     HiLink cf3Class         cf3Context
@@ -282,7 +303,13 @@ if version >= 508 || !exists("did_cfg_syn_inits")
     HiLink cf3ProcessesAttr	Statement
     HiLink cf3FilesAttr		Statement
 	HiLink cf3MethodAttr	cf3Type
-    HiLink cf3PackagesAttr		Statement
+    HiLink cf3PackagesAttr	Statement
+	HiLink cf3ControlAttr	Statement
+	HiLink cf3GuestEnvAttr	Statement
+	HiLink cf3TopicsAttr	Statement
+	HiLink cf3ServicesAttr	Statement
+	HiLink cf3DatabasesAttr	Statement
+	HiLink cf3DefaultsAttr	Statement
 
     HiLink cf3EditLineAttr		Statement
     HiLink cf3EditFieldAttr		Statement
@@ -292,8 +319,7 @@ if version >= 508 || !exists("did_cfg_syn_inits")
     HiLink cf3ProcSelectAttr	Statement
     HiLink cf3EditDefAttr		Statement
     HiLink cf3LocationAttr		Statement
-	HiLink cf3FileSelectAttr	Statement
-	HiLink cf3ControlAttr		Statement
+	HiLink cf3BodyFileSelectAttr	Statement
 	HiLink cf3BodyClassesAttr	Statement
 	HiLink cf3BodyLinkFromAttr	Statement
 	HiLink cf3BodyPermsAttr		Statement
@@ -312,6 +338,7 @@ if version >= 508 || !exists("did_cfg_syn_inits")
 	HiLink cf3BodyDatabaseServerAttr	Statement
 	HiLink cf3BodyEnvResourcesAttr	Statement
 	HiLink cf3BodyMatchValueAttr	Statement
+	HiLink cf3BodyServiceMethodAttr Statement
 
     delcommand HiLink
 endif
