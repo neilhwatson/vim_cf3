@@ -5,10 +5,7 @@
 " Location:
 "
 " TODO: 
-" 	- matches for promises
 "	- would be great to know current promise type
-"	- attributes for main promises
-"	- attributes for bodies
 "
 " This is my first attempt at a syntax file.  Feel free to send me correctsion
 " or improvements.  I'll give you a credit.
@@ -70,7 +67,7 @@ syn match   cf3Esc          /\\\\[sSdD+][\+\*]*/ contained
 " Array indexes contained in [].  Does not seems to be working.
 syn region  cf3Array        start=/\(\\\)\@<!\[/ end=/\]/ contained contains=cf3Var
 " Variables wrapped in {} or ()
-syn region  cf3Var          start=/[$\@][{(]/ end=/[})]/ contains=cf3Var,cf3Array
+syn region  cf3Var          start=/[$@][{(]/ end=/[})]/ contains=cf3Var,cf3Array
 syn region  cf3String       start=/\z\("\|'\)/ skip=/\\\z1/ end=/\z1/ contains=cf3Var,cf3Esc,cf3Array
 
 syn keyword cf3Type			string int real slist ilist rlist policy
@@ -144,7 +141,7 @@ syn keyword cf3ControlAttr	ignore_missing_bundles ignore_missing_inputs inputs c
 syn keyword cf3ControlAttr	version lastseenexpireafter output_prefix domain contained
 syn keyword cf3ControlAttr	require_comments host_licenses_paid site_classes contained
 syn keyword cf3ControlAttr	syslog_host syslog_port fips_mode contained
-syn keyword cf3MethodAttr	usebundle contained
+syn keyword cf3MethodAttr	usebundle inherit contained
 syn keyword cf3CommonAttr	action classes ifvarclass handle depends_on comment contained
 syn keyword cf3ClassesAttr	or and xor dist expression not select_class contained
 syn keyword cf3CommandsAttr args contain module contained
@@ -161,11 +158,15 @@ syn keyword cf3DatabasesAttr	database_server database_type contained
 syn keyword cf3DatabasesAttr	database_operation database_columns contained
 syn keyword cf3DatabasesAttr	database_rows registry_exclude contained
 syn keyword cf3DefaultsAttr	if_match_regex contained
-
+syn keyword cf3StorageAttr	mount volume  contained
 syn keyword cf3FilesAttr	acl changes copy_from create delete depth_search contained
 syn keyword cf3FilesAttr	edit_line edit_xml edit_defaults file_select contained
 syn keyword cf3FilesAttr	link_from move_obstructions pathtype perms contained
 syn keyword cf3FilesAttr	rename repository touch transformer contained
+syn keyword cf3AccessAttr	admit deny maproot contained
+syn keyword cf3AccessAttr	ifencrypted resource_type contained
+
+" Bodies
 syn keyword cf3EditLineAttr	replace_with edit_field whitespace_policy location contained 
 syn keyword cf3EditLineAttr	insert_select insert_type expand_scalars not_matching contained
 syn keyword cf3EditLineAttr	delete_select select_region contained
@@ -239,9 +240,36 @@ syn keyword cf3BodyMatchValueAttr	 select_line_matching select_line_number conta
 syn keyword cf3BodyMatchValueAttr	 extraction_regex track_growing_file contained
 syn keyword cf3BodyServiceMethodAttr	service_type service_args service_bundle contained
 syn keyword cf3BodyServiceMethodAttr	service_autostart_policy service_dependence_chain contained
+syn keyword cf3BodyEnvInterfaceAttr	env_addresses env_name env_network contained
+syn keyword cf3BodyServerControlAttr	allowallconnects allowconnects contained
+syn keyword cf3BodyServerControlAttr	allowusers auditing bindtointerface contained
+syn keyword cf3BodyServerControlAttr	cfruncommand denybadclocks denyconnects contained
+syn keyword cf3BodyServerControlAttr	dynamicaddresses hostnamekeys keycacheTTL contained
+syn keyword cf3BodyServerControlAttr	logallconnections logencryptedtransfers contained
+syn keyword cf3BodyServerControlAttr	maxconnections port serverfacility contained
+syn keyword cf3BodyServerControlAttr	skipverify trustkeysfrom contained
+syn keyword cf3BodyAgentControlAttr	abortclasses abortbundleclasses addclasses contained
+syn keyword cf3BodyAgentControlAttr	agentaccess agentfacility alwaysvalidate contained
+syn keyword cf3BodyAgentControlAttr	auditing binarypaddingchar bindtointerface contained
+syn keyword cf3BodyAgentControlAttr	hashupdates childlibpath checksum_alert_time contained
+syn keyword cf3BodyAgentControlAttr	defaultcopytype dryrun editbinaryfilesize contained
+syn keyword cf3BodyAgentControlAttr	editfilesize environment exclamation expireafter contained
+syn keyword cf3BodyAgentControlAttr	files_single_copy files_auto_define hostnamekeys contained
+syn keyword cf3BodyAgentControlAttr	ifelapsed inform intermittency max_children contained
+syn keyword cf3BodyAgentControlAttr	maxconnections mountfilesystems nonalphanumfiles contained
+syn keyword cf3BodyAgentControlAttr	repchar refresh_processes default_repository contained
+syn keyword cf3BodyAgentControlAttr	secureinput sensiblecount sensiblesize contained
+syn keyword cf3BodyAgentControlAttr	skipidentify suspiciousnames syslog verbose contained
+syn keyword cf3BodyAgentControlAttr	track_value timezone default_timeout contained
+syn keyword cf3BodyExecutorControlAttr splaytime mailfrom mailto smtpserver contained
+syn keyword cf3BodyExecutorControlAttr mailmaxlines schedule executorfacility contained
+syn keyword cf3BodyExecutorControlAttr exec_command contained
+syn keyword cf3BodyEditDefsAttr		edit_backup empty_file_before_editing contained
+syn keyword cf3BodyEditDefsAttr		max_file_size recognize_join inherit contained
 
 syn cluster cf3AttrCluster	contains=cf3CommonAttr,cf3ClassesAttr,cf3Identifier,cf3ProcessesAttr,cf3FilesAttr
 syn cluster cf3AttrCluster	add=cf3PackagesAttr,cf3GuestEnvAttr,cf3TopicsAttr
+syn cluster cf3AttrCluster	add=cf3StorageAttr,cf3AccessAttr
 syn cluster cf3AttrCluster	add=cf3EditLineAttr,cf3EditFieldAttr,cf3ReplaceWithAttr
 syn cluster cf3AttrCluster	add=cf3SelectRegionAttr,cf3ProcCountAttr,cf3ProcSelectAttr
 syn cluster cf3AttrCluster	add=cf3EditDefAttr,cf3LocationAttr,cf3CommandsAttr,cf3BodyFileSelectAttr
@@ -254,6 +282,8 @@ syn cluster cf3AttrCluster	add=cf3BodyChangesAttr,cf3BodyPackageMethodAttr,cf3Bo
 syn cluster cf3AttrCluster	add=cf3BodyContainAttr,cf3BodyCopyFromAttr,cf3BodyVolumeAttr
 syn cluster cf3AttrCluster	add=cf3BodyMountAttr,cf3BodyServiceMethodAttr,cf3BodyDatabaseServerAttr
 syn cluster cf3AttrCluster	add=cf3BodyEnvResourcesAttr,cf3BodyMatchValueAttr,cf3BodyServiceMethodAttr
+syn cluster cf3AttrCluster	add=cf3BodyEnvInterfaceAttr,cf3BodyServerControlAttr,cf3BodyEditDefsAttr
+syn cluster cf3AttrCluster	add=cf3BodyAgentControlAttr,cf3BodyExecutorControlAttr
 syn match	cf3Attributes	/\w\+\s*=>/ contains=@cf3AttrCluster
 
 
@@ -310,6 +340,8 @@ if version >= 508 || !exists("did_cfg_syn_inits")
 	HiLink cf3ServicesAttr	Statement
 	HiLink cf3DatabasesAttr	Statement
 	HiLink cf3DefaultsAttr	Statement
+	HiLink cf3StorageAttr	Statement
+	HiLink cf3AccessAttr	Statement
 
     HiLink cf3EditLineAttr		Statement
     HiLink cf3EditFieldAttr		Statement
@@ -339,6 +371,11 @@ if version >= 508 || !exists("did_cfg_syn_inits")
 	HiLink cf3BodyEnvResourcesAttr	Statement
 	HiLink cf3BodyMatchValueAttr	Statement
 	HiLink cf3BodyServiceMethodAttr Statement
+	HiLink cf3BodyEnvInterfaceAttr Statement
+	HiLink cf3BodyServerControlAttr Statement
+	HiLink cf3BodyAgentControlAttr Statement
+	HiLink cf3BodyExecutorControlAttr Statement
+	HiLink cf3BodyEditDefsAttr Statement
 
     delcommand HiLink
 endif
