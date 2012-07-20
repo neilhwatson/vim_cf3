@@ -49,7 +49,7 @@ syn match   cf3BodyControl /^\s*body\s\+\(monitor\|runagent\)\s\+control/
 syn match   cf3BodyControl /^\s*body\s\+\(executor\|knowledge\|hub\)\s\+control/  
 syn match   cf3BodyControl /^\s*body\s\+\(reporter\|file\)\s\+control/  
 
-syn match cf3Action /\<\(vars\|classes\|reports\):/
+syn match cf3Action /\<\(vars\|classes\|reports\|meta\):/
 syn match cf3Action /\<\(commands\|databases\|files\|interfaces\|methods\|packages\|storage\):/
 syn match cf3Action /\<\(access\|measurements\|roles\|topics\|occurrences\|defaults\):/
 syn match cf3Action /\<\(control\|guest_environments\|outputs\|processes\|services\|things\):/
@@ -92,7 +92,7 @@ syn keyword cf3BuiltIns		readstringlist readtcp regarray regcmp regextract conta
 syn keyword cf3BuiltIns		registryvalue regline reglist regldap remotescalar contained
 syn keyword cf3BuiltIns		remoteclassesmatching returnszero rrange selectservers contained
 syn keyword cf3BuiltIns		splayclass splitstring strcmp sum translatepath contained
-syn keyword cf3BuiltIns		usemodule userexists contained
+syn keyword cf3BuiltIns		usemodule userexists maplist contained
 
 " Stdlib: -rw-r--r--  1 ivan  staff  59012 Jun 27 18:05
 " /Users/ivan/Downloads/cfengine_stdlib.cf
@@ -165,6 +165,10 @@ syn keyword cf3FilesAttr	link_from move_obstructions pathtype perms contained
 syn keyword cf3FilesAttr	rename repository touch transformer contained
 syn keyword cf3AccessAttr	admit deny maproot contained
 syn keyword cf3AccessAttr	ifencrypted resource_type contained
+syn keyword cf3MeasurementsAttr	stream_type data_type history_type contained
+syn keyword cf3MeasurementsAttr	units match_value contained
+syn keyword cf3ReportsAttr	friend_pattern intermittency lastseen contained
+syn keyword cf3ReportsAttr	printfile report_to_file showstate contained
 
 " Bodies
 syn keyword cf3EditLineAttr	replace_with edit_field whitespace_policy location contained 
@@ -266,10 +270,26 @@ syn keyword cf3BodyExecutorControlAttr mailmaxlines schedule executorfacility co
 syn keyword cf3BodyExecutorControlAttr exec_command contained
 syn keyword cf3BodyEditDefsAttr		edit_backup empty_file_before_editing contained
 syn keyword cf3BodyEditDefsAttr		max_file_size recognize_join inherit contained
+syn keyword cf3BodyDeleteSelectAttr	delete_if_startwith_from_list contained
+syn keyword cf3BodyDeleteSelectAttr	delete_if_not_startwith_from_list contained
+syn keyword cf3BodyDeleteSelectAttr	delete_if_match_from_list contained
+syn keyword cf3BodyDeleteSelectAttr	delete_if_not_match_from_list contained
+syn keyword cf3BodyDeleteSelectAttr	delete_if_contains_from_list contained
+syn keyword cf3BodyDeleteSelectAttr	delete_if_not_contains_from_list contained
+syn keyword cf3BodyInsertSelectAttr	insert_if_startwith_from_list contained
+syn keyword cf3BodyInsertSelectAttr	insert_if_not_startwith_from_list contained
+syn keyword cf3BodyInsertSelectAttr	insert_if_match_from_list contained
+syn keyword cf3BodyInsertSelectAttr	insert_if_not_match_from_list contained
+syn keyword cf3BodyInsertSelectAttr	insert_if_contains_from_list contained
+syn keyword cf3BodyInsertSelectAttr	insert_if_not_contains_from_list contained
+syn keyword cf3BodyMonitorControlAttr forgetrate monitorfacility histograms contained
+syn keyword cf3BodyMonitorControlAttr tcpdump tcpdumpcommand contained
+syn keyword cf3BodyPrintfileAttr	file_to_print number_of_lines contained
 
-syn cluster cf3AttrCluster	contains=cf3CommonAttr,cf3ClassesAttr,cf3Identifier,cf3ProcessesAttr,cf3FilesAttr
+syn cluster cf3AttrCluster	contains=cf3CommonAttr,cf3ClassesAttr,cf3Identifier,
+syn cluster cf3AttrCluster  add=cf3ProcessesAttr,cf3FilesAttr,cf3ReportsAttr
 syn cluster cf3AttrCluster	add=cf3PackagesAttr,cf3GuestEnvAttr,cf3TopicsAttr
-syn cluster cf3AttrCluster	add=cf3StorageAttr,cf3AccessAttr
+syn cluster cf3AttrCluster	add=cf3StorageAttr,cf3AccessAttr,cf3MeasurementsAttr
 syn cluster cf3AttrCluster	add=cf3EditLineAttr,cf3EditFieldAttr,cf3ReplaceWithAttr
 syn cluster cf3AttrCluster	add=cf3SelectRegionAttr,cf3ProcCountAttr,cf3ProcSelectAttr
 syn cluster cf3AttrCluster	add=cf3EditDefAttr,cf3LocationAttr,cf3CommandsAttr,cf3BodyFileSelectAttr
@@ -284,6 +304,8 @@ syn cluster cf3AttrCluster	add=cf3BodyMountAttr,cf3BodyServiceMethodAttr,cf3Body
 syn cluster cf3AttrCluster	add=cf3BodyEnvResourcesAttr,cf3BodyMatchValueAttr,cf3BodyServiceMethodAttr
 syn cluster cf3AttrCluster	add=cf3BodyEnvInterfaceAttr,cf3BodyServerControlAttr,cf3BodyEditDefsAttr
 syn cluster cf3AttrCluster	add=cf3BodyAgentControlAttr,cf3BodyExecutorControlAttr
+syn cluster cf3AttrCluster	add=cf3BodyDeleteSelectAttr,cf3BodyInsertSelectAttr
+syn cluster cf3AttrCluster	add=cf3BodyMonitorControlAttr,cf3BodyPrintfileAttr
 syn match	cf3Attributes	/\w\+\s*=>/ contains=@cf3AttrCluster
 
 
@@ -342,6 +364,8 @@ if version >= 508 || !exists("did_cfg_syn_inits")
 	HiLink cf3DefaultsAttr	Statement
 	HiLink cf3StorageAttr	Statement
 	HiLink cf3AccessAttr	Statement
+	HiLink cf3MeasurementsAttr Statement
+	HiLink cf3ReportsAttr	Statement
 
     HiLink cf3EditLineAttr		Statement
     HiLink cf3EditFieldAttr		Statement
@@ -376,6 +400,10 @@ if version >= 508 || !exists("did_cfg_syn_inits")
 	HiLink cf3BodyAgentControlAttr Statement
 	HiLink cf3BodyExecutorControlAttr Statement
 	HiLink cf3BodyEditDefsAttr Statement
+	HiLink cf3BodyInsertSelectAttr Statement
+	HiLink cf3BodyDeleteSelectAttr Statement
+	HiLink cf3BodyMonitorControlAttr Statement
+	HiLink cf3BodyPrintfileAttr Statement
 
     delcommand HiLink
 endif
