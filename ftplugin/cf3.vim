@@ -1,7 +1,6 @@
 " Vim file plugin
-
 " This is my first attempt at a ftplugin file.  Feel free to send me
-" correctsion or improvements.  I'll give you a credit.
+" corrections or improvements.  I'll give you a credit.
 "
 " USAGE
 " There is already a vim file that uses 'cf' as a file extension.  You can use
@@ -27,7 +26,7 @@ let b:did_ftplugin = 1
 " Conveniance function ToggleCFE3KeywordAbbreviations
 " mapped to ,i by default to toggle abbreviations off or on
 "
-function! EnableCFE3KeywordAbbriveations()
+function! EnableCFE3KeywordAbbreviations()
     iab = =>
     iab bu bundle
     iab han handle => "<C-R>=Eatchar('\s')<CR>
@@ -44,7 +43,7 @@ function! EnableCFE3KeywordAbbriveations()
     iab ub usebundle =>
     iab str string => "<C-R>=Eatchar('\s')<CR>
     iab sli slist => {
-    echo "CFEngine 3 Keyword Abbriveations enabled"
+    echo "CFEngine 3 Keyword Abbreviations enabled"
 endfunction
 
 function! DisableCFE3KeywordAbbreviations()
@@ -64,20 +63,20 @@ function! DisableCFE3KeywordAbbreviations()
     iunab ub
     iunab str
     iunab sli
-    echo "CFEngine 3 Keyword Abbriveations disabled"
+    echo "CFEngine 3 Keyword Abbreviations disabled"
 endfunction
 
 " Default abbreviations on
 " to disable let g:DisableCFE3KeywordAbbreviations=1 in ~/.vimrc
 if !exists('g:DisableCFE3KeywordAbbreviations')
     let g:DisableCFE3KeywordAbbreviations=1
-    call EnableCFE3KeywordAbbriveations()
+    call EnableCFE3KeywordAbbreviations()
 endif
 
 function! ToggleCFE3KeywordAbbreviations()
     if !exists('g:DisableCFE3KeywordAbbreviations')
         let g:DisableCFE3KeywordAbbreviations=1
-        call EnableCFE3KeywordAbbriveations()
+        call EnableCFE3KeywordAbbreviations()
     else
         unlet g:DisableCFE3KeywordAbbreviations
         call DisableCFE3KeywordAbbreviations()
