@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:     Cfengine version 3
 " Maintainer:   Neil Watson <neil@watson-wilson.ca>
-" Last Change:  Jul 14 2012
+" Last Change:  Jul 21 2012
 " Location:
 "
 " TODO: 
@@ -69,7 +69,7 @@ syn region  cf3Array        start=/\(\\\)\@<!\[/ end=/\]/ contained contains=cf3
 " Variables wrapped in {} or ()
 syn region  cf3Var          start=/[$@][{(]/ end=/[})]/ contains=cf3Var,cf3Array
 syn region  cf3String       start=/\z\("\|'\)/ skip=/\\\z1/ end=/\z1/ contains=cf3Var,cf3Esc,cf3Array
-syn region  cf3Fold 		start="{" end="}" transparent fold
+syn region  cf3Fold 	    start="{" end="}" transparent fold
 
 syn keyword cf3Type			string int real slist ilist rlist policy
 
