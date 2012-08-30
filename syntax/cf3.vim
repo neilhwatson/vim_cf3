@@ -30,7 +30,7 @@ syn match   cf3BundleName /\s\+\w\+\s*/ contained nextgroup=cf3BundleParams
 
 syn keyword cf3BundleTypes agent common server knowledge monitor edit_line contained nextgroup=cf3BundleName skipwhite
 syn keyword cf3BundleTypes edit_xml contained nextgroup=cf3BundleName skipwhite
-syn match   cf3Bundle /^\s*bundle\s\+/ nextgroup=Cf3BundleTypes skipwhite
+syn match   cf3Bundle /^\s*bundle\s\+/ nextgroup=cf3BundleTypes skipwhite
 
 syn keyword cf3BodyTypes action classes contain acl changes contained nextgroup=cf3BundleName skipwhite
 syn keyword cf3BodyTypes copy_from delete depth_search contained nextgroup=cf3BundleName skipwhite
@@ -60,7 +60,7 @@ syn match   cf3Class        /[^ "\t:#]\+::/
 syn keyword TODO todo TODO FIXME TBD NOTE contained
 syn match   cf3Comment      /#.*/ contains=TODO
 
-syn match   cf3Identifier   /=>/
+syn match   cf3Identifier   /\(-\|=\)>/
 
 " Escape sequences in regexes
 syn match   cf3Esc          /\\\\[sSdD+][\+\*]*/ contained
@@ -69,9 +69,10 @@ syn region  cf3Array        start=/\(\\\)\@<!\[/ end=/\]/ contained contains=cf3
 " Variables wrapped in {} or ()
 syn region  cf3Var          start=/[$@][{(]/ end=/[})]/ contains=cf3Var,cf3Array
 syn region  cf3String       start=/\z\("\|'\)/ skip=/\\\z1/ end=/\z1/ contains=cf3Var,cf3Esc,cf3Array
+" Folding support
 syn region  cf3Fold 	    start="{" end="}" transparent fold
 
-syn keyword cf3Type			string int real slist ilist rlist policy
+syn keyword cf3Type			string int real slist ilist rlist policy contained
 
 syn keyword cf3BuiltIns		accessedbefore accumulated ago and contained
 syn keyword cf3BuiltIns		canonify concat changedbefore classify contained
@@ -135,7 +136,7 @@ syn keyword cf3Stdlib kvm scan_log scan_changing_file single_value line_match_va
 syn keyword cf3Stdlib sample_rate contained
 
 "syn	match	cf3Function		/\w\+[,;(\>]/ contains=cf3BuiltIns,cf3Stdlib
-syn	match	cf3Function		/\<\w\+[,;()]/ contains=cf3BuiltIns,cf3Stdlib
+syn	match	cf3Function		/\<\w\+[,;(]/ contains=cf3BuiltIns,cf3Stdlib
 
 syn keyword cf3ControlAttr	bundlesequence goal_categories contained
 syn keyword cf3ControlAttr	ignore_missing_bundles ignore_missing_inputs inputs contained
@@ -307,7 +308,7 @@ syn cluster cf3AttrCluster	add=cf3BodyEnvInterfaceAttr,cf3BodyServerControlAttr,
 syn cluster cf3AttrCluster	add=cf3BodyAgentControlAttr,cf3BodyExecutorControlAttr
 syn cluster cf3AttrCluster	add=cf3BodyDeleteSelectAttr,cf3BodyInsertSelectAttr
 syn cluster cf3AttrCluster	add=cf3BodyMonitorControlAttr,cf3BodyPrintfileAttr
-syn match	cf3Attributes	/\w\+\s*=>/ contains=@cf3AttrCluster
+syn match	cf3Attributes	/\w\+\s*=>/ contains=@cf3AttrCluster,cf3Type
 
 
 if version >= 508 || !exists("did_cfg_syn_inits")
@@ -411,6 +412,7 @@ endif
 let b:current_syntax = "cf3"
 
 set foldmethod=syntax
+syntax sync minlines=25
 
 " CREDITS
 " Neil Watson <neil@watson-wilson.ca>
