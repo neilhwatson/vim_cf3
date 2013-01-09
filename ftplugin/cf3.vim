@@ -108,7 +108,7 @@ nmap ,k Obody common control {
 \<CR>
 \<CR>methods:
 \<CR>
-\<CR>"any" usebundle => test;
+\<CR><TAB>"any" usebundle => test;
 \<CR>
 \<CR>}
 \<CR>
