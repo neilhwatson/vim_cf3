@@ -121,9 +121,13 @@ nmap ,k Obody common control {
 " by Damian Conway
 " http://www.ibm.com/developerworks/linux/library/l-vim-script-2/index.html
 if !exists("*CF3AlignAssignments")
-function CF3AlignAssignments ()
+function CF3AlignAssignments (AOP)
     "Patterns needed to locate assignment operators...
-    let ASSIGN_OP   = '\(string\|int\|real\|slist\|ilist\|rlist\|expression\|and\|or\|not\|volume\)*\s\+=>'
+    if a:AOP == 'vars'
+       let ASSIGN_OP   = '\(string\|int\|real\|slist\|ilist\|rlist\|expression\|and\|or\|not\|volume\)*\s\+=>'
+    else
+       let ASSIGN_OP   = '=>'
+    endif
     let ASSIGN_LINE = '^\(.\{-}\)\s*\(' . ASSIGN_OP . '\)'
 
     "Locate block of code to be considered (same indentation, no blanks)
@@ -163,7 +167,8 @@ function CF3AlignAssignments ()
 endfunction
 endif
 
-nmap <silent>  ,=  :call CF3AlignAssignments()<CR>
+nmap <silent>  ,=  :call CF3AlignAssignments("null")<CR>
+nmap <silent>  <ESC>=  :call CF3AlignAssignments("vars")<CR>
 
 " TODO
 " Folding
@@ -174,6 +179,10 @@ nmap <silent>  ,=  :call CF3AlignAssignments()<CR>
 " Other Cfengine information: http://watson-wilson.ca/cfengine/
 "
 " CHANGES
+" Wednesday January 09 2013 
+" Operator alignment now works for just '=>' with ',=' or 'string, stlist ,etc
+" and => ' with '<ESC>='
+"
 " Wednesday October 05 2011
 " - Added comment and handle abbs.  Assumes you have the Eatchar and Getchar
 " functions.

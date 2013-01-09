@@ -74,7 +74,8 @@ visually blocked.
 ,k Inserts the skeleton of a self-contained Cfengine policy including a
 bundlesequence, inputs, a main bundle and a test bundle.
 
-,= Aligns => in across multiple lines to make it pretty.
+<ESC>= Aligns string, slist, etc and => across multiple lines to make it pretty.
+,= Aligns => across multiple lines to make it pretty.
 
 *cf3Author*
 
