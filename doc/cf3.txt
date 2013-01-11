@@ -52,6 +52,10 @@ ub usebundle =>
 str string =>
 sli slist =>
 
+*cf3snippets
+
+A tech preview. Insert your snippet files.  For example, in insert mode type //tmp and the skeleton template will be inserted.
+
 *cf3folds*
 
 Does basic folding of body types using markers { and }.  See folds for normal commands.

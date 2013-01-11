@@ -170,6 +170,16 @@ endif
 nmap <silent>  ,=  :call CF3AlignAssignments("null")<CR>
 nmap <silent>  <ESC>=  :call CF3AlignAssignments("vars")<CR>
 
+" For pasting code snippers
+function! Pastefile( FILE )
+        let arg_file = $HOME."/.vim/snippets/".a:FILE
+        let @" = join( readfile( arg_file ), "\n" )
+        put 
+        return ""
+endfunction
+
+imap //tmp <c-r>=Pastefile( "template.cf" )<CR><ESC>A
+
 " TODO
 " Folding
 " Indents
