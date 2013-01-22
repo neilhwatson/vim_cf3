@@ -27,42 +27,42 @@ let b:did_ftplugin = 1
 " mapped to ,i by default to toggle abbreviations off or on
 "
 function! EnableCFE3KeywordAbbreviations()
-    iab = =>
-    iab bu bundle
-    iab han handle => "<C-R>=Eatchar('\s')<CR>
-    iab cla classes:
-    iab comma commands:
-    iab comme comment => "<C-R>=Eatchar('\s')<CR>
-    iab fil files:
-    iab met methods:
-    iab pro processes:
-    iab rep reports:
-    iab var vars:
-    iab ba bundle agent
-    iab bc bundle common
-    iab ub usebundle =>
-    iab str string => "<C-R>=Eatchar('\s')<CR>
-    iab sli slist => {
+    iab <buffer> = =>
+    iab <buffer> bu bundle
+    iab <buffer> han handle => "<C-R>=Eatchar('\s')<CR>
+    iab <buffer> cla classes:
+    iab <buffer> comma commands:
+    iab <buffer> comme comment => "<C-R>=Eatchar('\s')<CR>
+    iab <buffer> fil files:
+    iab <buffer> met methods:
+    iab <buffer> pro processes:
+    iab <buffer> rep reports:
+    iab <buffer> var vars:
+    iab <buffer> ba bundle agent
+    iab <buffer> bc bundle common
+    iab <buffer> ub usebundle =>
+    iab <buffer> str string => "<C-R>=Eatchar('\s')<CR>
+    iab <buffer> sli slist => {
     echo "CFEngine 3 Keyword Abbreviations enabled"
 endfunction
 
 function! DisableCFE3KeywordAbbreviations()
-    iunab =
-    iunab bu
-    iunab han 
-    iunab cla
-    iunab comma
-    iunab comme
-    iunab fil
-    iunab met
-    iunab pro
-    iunab rep
-    iunab var
-    iunab ba
-    iunab bc
-    iunab ub
-    iunab str
-    iunab sli
+     iunab <buffer> =
+     iunab <buffer> bu
+     iunab <buffer> han 
+     iunab <buffer> cla
+     iunab <buffer> comma
+     iunab <buffer> comme
+     iunab <buffer> fil
+     iunab <buffer> met
+     iunab <buffer> pro
+     iunab <buffer> rep
+     iunab <buffer> var
+     iunab <buffer> ba
+     iunab <buffer> bc
+     iunab <buffer> ub
+     iunab <buffer> str
+     iunab <buffer> sli
     echo "CFEngine 3 Keyword Abbreviations disabled"
 endfunction
 
@@ -85,15 +85,15 @@ endfunction
 
 " maps
 " Toggle KeywordAbbreviations
-nmap ,i :call ToggleCFE3KeywordAbbreviations()<CR>
+nmap <buffer> ,i :call ToggleCFE3KeywordAbbreviations()<CR>
 " Wrap WORD in double quotes
-nmap ,q dE<ESC>i"<ESC>pa"<ESC>
+nmap <buffer> ,q dE<ESC>i"<ESC>pa"<ESC>
 " Insert blank promise
-nmap ,p o""<CR><TAB>handle => "",<CR>comment => ""<ESC>
+nmap <buffer> ,p o""<CR><TAB>handle => "",<CR>comment => ""<ESC>
 " quote list items
-vmap ,q :s/^\s*\(.*\)\s*$/"\1",/g<CR>
+vmap <buffer> ,q :s/^\s*\(.*\)\s*$/"\1",/g<CR>
 " Insert whole self contained skeleton
-nmap ,k Obody common control {
+nmap <buffer> ,k Obody common control {
 \<CR>
 \<CR>bundlesequence => {
 \<CR>"main",
@@ -167,8 +167,8 @@ function CF3AlignAssignments (AOP)
 endfunction
 endif
 
-nmap <silent>  ,=  :call CF3AlignAssignments("null")<CR>
-nmap <silent>  <ESC>=  :call CF3AlignAssignments("vars")<CR>
+nmap <buffer> <silent>  ,=  :call CF3AlignAssignments("null")<CR>
+nmap <buffer> <silent>  <ESC>=  :call CF3AlignAssignments("vars")<CR>
 
 " For pasting code snippers
 function! Pastefile( FILE )
@@ -178,7 +178,7 @@ function! Pastefile( FILE )
         return ""
 endfunction
 
-imap //tmp <c-r>=Pastefile( "template.cf" )<CR><ESC>A
+imap <buffer> //tmp <c-r>=Pastefile( "template.cf" )<CR><ESC>A
 
 " TODO
 " Folding
