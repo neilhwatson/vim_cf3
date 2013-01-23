@@ -69,16 +69,16 @@ endfunction
 " Default abbreviations on
 " to disable let g:DisableCFE3KeywordAbbreviations=1 in ~/.vimrc
 if !exists('g:DisableCFE3KeywordAbbreviations')
-    let g:DisableCFE3KeywordAbbreviations=1
+    let b:DisableCFE3KeywordAbbreviations=1
     call EnableCFE3KeywordAbbreviations()
 endif
 
 function! ToggleCFE3KeywordAbbreviations()
-    if !exists('g:DisableCFE3KeywordAbbreviations')
-        let g:DisableCFE3KeywordAbbreviations=1
+    if !exists('b:DisableCFE3KeywordAbbreviations')
+        let b:DisableCFE3KeywordAbbreviations=1
         call EnableCFE3KeywordAbbreviations()
     else
-        unlet g:DisableCFE3KeywordAbbreviations
+        unlet b:DisableCFE3KeywordAbbreviations
         call DisableCFE3KeywordAbbreviations()
     endif
 endfunction
