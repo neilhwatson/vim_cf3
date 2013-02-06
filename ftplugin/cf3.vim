@@ -14,6 +14,7 @@ if exists("g:DisableCF3Ftplugin")
     finish
 endif
 
+
 " Only do this when not done yet for this buffer
 if exists("b:did_ftplugin")
   finish
@@ -82,6 +83,19 @@ function! ToggleCFE3KeywordAbbreviations()
         call DisableCFE3KeywordAbbreviations()
     endif
 endfunction
+
+function! EnableCFE3PermissionFix()
+" On Save set the permissions of the editied file so others cant access
+    :autocmd BufWritePost *.cf silent !chmod o-rwx %
+endfunction
+
+" Default permission fix on
+" To disable permission fixing in your main .vimrc
+" let g:DisableCFE3PermissionFix=0
+if !exists('g:DisableCFE3PermissionFix')
+    let g:DisableCFE3PermissionFix=1
+    call EnableCFE3PermissionFix()
+endif
 
 " maps
 " Toggle KeywordAbbreviations
