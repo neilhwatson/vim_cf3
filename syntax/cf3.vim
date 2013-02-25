@@ -56,6 +56,7 @@ syn match cf3Action /\<\(control\|guest_environments\|outputs\|processes\|servic
 syn match cf3Action /\<\(delete_lines\|field_edits\|insert_lines\|replace_patterns\):/
 
 syn match   cf3Class        /[^ "\t:#]\+::/
+syn region  cf3ClassBlock   start=/\[%CFEngine/ end=/%\]/ contains=Cf3Class
 
 syn keyword TODO todo TODO FIXME TBD NOTE contained
 syn match   cf3Comment      /#.*/ contains=TODO
@@ -323,6 +324,7 @@ if version >= 508 || !exists("did_cfg_syn_inits")
 	hi cf3Type ctermfg=Magenta 
 	hi Identifier ctermfg=Blue 
 	hi Function ctermfg=DarkGreen
+	hi cf3ClassBlock ctermfg=Yellow
 
     HiLink cf3Bundle        Statement
     HiLink cf3BundleTypes   Statement
