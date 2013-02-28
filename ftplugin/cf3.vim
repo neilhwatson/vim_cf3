@@ -44,6 +44,7 @@ function! EnableCFE3KeywordAbbreviations()
     iab <buffer> ub usebundle =>
     iab <buffer> str string => "<C-R>=Eatchar('\s')<CR>
     iab <buffer> sli slist => {
+    iab <buffer> sysw ${sys.workdir}
     echo "CFEngine 3 Keyword Abbreviations enabled"
 endfunction
 
@@ -64,6 +65,7 @@ function! DisableCFE3KeywordAbbreviations()
      iunab <buffer> ub
      iunab <buffer> str
      iunab <buffer> sli
+     iunab <buffer> sysw
     echo "CFEngine 3 Keyword Abbreviations disabled"
 endfunction
 
