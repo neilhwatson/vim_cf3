@@ -72,7 +72,7 @@ syn region  cf3Var          start=/[$@][{(]/ end=/[})]/ contains=cf3Var,cf3Array
 syn region  cf3String       start=/\z\("\|'\)/ skip=/\\\z1/ end=/\z1/ contains=cf3Var,cf3Esc,cf3Array
 syn region  cf3Fold 	    start="{" end="}" transparent fold
 
-syn keyword cf3Type			string int real slist ilist rlist policy
+syn keyword cf3Type			string int real slist ilist rlist
 
 syn keyword cf3BuiltIns		accessedbefore accumulated ago and contained
 syn keyword cf3BuiltIns		canonify concat changedbefore classify contained
@@ -144,7 +144,7 @@ syn keyword cf3ControlAttr	version lastseenexpireafter output_prefix domain cont
 syn keyword cf3ControlAttr	require_comments host_licenses_paid site_classes contained
 syn keyword cf3ControlAttr	syslog_host syslog_port fips_mode contained
 syn keyword cf3MethodAttr	usebundle inherit contained
-syn keyword cf3CommonAttr	action classes ifvarclass handle depends_on comment contained
+syn keyword cf3CommonAttr	action classes ifvarclass handle depends_on comment policy contained
 syn keyword cf3ClassesAttr	or and xor dist expression not select_class contained
 syn keyword cf3CommandsAttr args contain module contained
 syn keyword cf3ProcessesAttr process_count process_select contained
