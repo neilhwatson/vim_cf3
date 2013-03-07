@@ -162,7 +162,7 @@ syn keyword cf3DatabasesAttr	database_rows registry_exclude contained
 syn keyword cf3DefaultsAttr	if_match_regex contained
 syn keyword cf3StorageAttr	mount volume  contained
 syn keyword cf3FilesAttr	acl changes copy_from create delete depth_search contained
-syn keyword cf3FilesAttr	edit_line edit_xml edit_defaults file_select contained
+syn keyword cf3FilesAttr	edit_defaults edit_line edit_template edit_xml file_select contained
 syn keyword cf3FilesAttr	link_from move_obstructions pathtype perms contained
 syn keyword cf3FilesAttr	rename repository touch transformer contained
 syn keyword cf3AccessAttr	admit deny maproot contained
