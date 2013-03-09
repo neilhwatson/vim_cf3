@@ -102,7 +102,7 @@ syn keyword cf3BuiltIns		usemodule userexists maplist contained
 syn keyword cf3Stdlib insert_lines insert_file comment_lines_matching uncomment_lines_matching  contained
 syn keyword cf3Stdlib comment_lines_containing uncomment_lines_containing delete_lines_matching contained
 syn keyword cf3Stdlib warn_lines_matching append_if_no_line  contained
-syn keyword cf3Stdlib append_if_no_lines replace_line_end append_to_line_end contained
+syn keyword cf3Stdlib append_if_no_lines replace_line_end append_to_line_end regex_replace contained
 syn keyword cf3Stdlib resolvconf manage_variable_values_ini  contained
 syn keyword cf3Stdlib set_variable_values_ini set_variable_values set_config_values contained
 syn keyword cf3Stdlib set_config_values_matching maintain_key_values  contained
