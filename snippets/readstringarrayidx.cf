@@ -1,0 +1,18 @@
+		"dim_myarray"
+			comment => "Read data file for parsing.",
+			handle  => "mybundle_vars_myarray",
+			classes => if_ok( "index_myarray" ),
+			int     => readstringarrayidx(
+				"myarray",
+				"${ref}",
+				"#[^\n]*",
+				"\s*;;\s*",
+				"100",
+				"50k"
+			);
+
+		index_myarray::
+			"myindex"
+				comment => "Get index array loaded above.",
+				handle  => "mybundle_vars_myindex",
+				slist   => getindices( "myarray" );

@@ -109,7 +109,8 @@ nmap <buffer> ,p o""<CR><TAB>handle => "",<CR>comment => ""<ESC>
 " quote list items
 vmap <buffer> ,q :s/^\s*\(.*\)\s*$/"\1",/g<CR>
 " Insert whole self contained skeleton
-nmap <buffer> ,k Obody common control {
+nmap <buffer> ,k Obody common control
+\<CR>{
 \<CR>
 \<CR>bundlesequence => {
 \<CR>"main",
@@ -120,15 +121,17 @@ nmap <buffer> ,k Obody common control {
 \<CR>};
 \<CR>}
 \<CR>
-\<CR>bundle agent main {
+\<CR>bundle agent main
+\<CR>{
 \<CR>
-\<CR>methods:
+\<CR><TAB>methods:
 \<CR>
-\<CR><TAB>"any" usebundle => test;
+\<CR><TAB><TAB>"any" usebundle => test;
 \<CR>
 \<CR>}
 \<CR>
-\<CR>bundle agent test {
+\<CR>bundle agent test
+\<CR>{
 \<CR>
 \<CR>}<ESC>
 
