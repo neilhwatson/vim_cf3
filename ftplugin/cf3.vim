@@ -124,9 +124,9 @@ nmap <buffer> ,k Obody common control
 \<CR>bundle agent main
 \<CR>{
 \<CR>
-\<CR><TAB>methods:
+\<CR>methods:
 \<CR>
-\<CR><TAB><TAB>"any" usebundle => test;
+\<CR><TAB>"any" usebundle => test;
 \<CR>
 \<CR>}
 \<CR>
