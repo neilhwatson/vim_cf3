@@ -29,43 +29,49 @@ let b:did_ftplugin = 1
 "
 function! EnableCFE3KeywordAbbreviations()
     iab <buffer> = =>
+    iab <buffer> ba bundle agent
+    iab <buffer> bc bundle common
     iab <buffer> bu bundle
-    iab <buffer> han handle => "<C-R>=Eatchar('\s')<CR>
+    iab <buffer> cano canonify( "<C-R>=Eatchar('\s')<CR>
     iab <buffer> cla classes:
     iab <buffer> comma commands:
     iab <buffer> comme comment => "<C-R>=Eatchar('\s')<CR>
+    iab <buffer> exp expression => <C-R>=Eatchar('\s')<CR>
     iab <buffer> fil files:
+    iab <buffer> han handle => "<C-R>=Eatchar('\s')<CR>
+    iab <buffer> ifv ifvarclass => <C-R>=Eatchar('\s')<CR>
     iab <buffer> met methods:
     iab <buffer> pro processes:
     iab <buffer> rep reports:
-    iab <buffer> var vars:
-    iab <buffer> ba bundle agent
-    iab <buffer> bc bundle common
-    iab <buffer> ub usebundle =>
-    iab <buffer> str string => "<C-R>=Eatchar('\s')<CR>
     iab <buffer> sli slist => {
+    iab <buffer> str string => "<C-R>=Eatchar('\s')<CR>
     iab <buffer> sysw ${sys.workdir}
+    iab <buffer> ub usebundle =>
+    iab <buffer> var vars:
     echo "CFEngine 3 Keyword Abbreviations enabled"
 endfunction
 
 function! DisableCFE3KeywordAbbreviations()
      iunab <buffer> =
+     iunab <buffer> ba
+     iunab <buffer> bc
      iunab <buffer> bu
-     iunab <buffer> han 
+     iunab <buffer> cano
      iunab <buffer> cla
      iunab <buffer> comma
      iunab <buffer> comme
+     iunab <buffer> exp
      iunab <buffer> fil
+     iunab <buffer> han 
+     iunab <buffer> ifv
      iunab <buffer> met
      iunab <buffer> pro
      iunab <buffer> rep
-     iunab <buffer> var
-     iunab <buffer> ba
-     iunab <buffer> bc
-     iunab <buffer> ub
-     iunab <buffer> str
      iunab <buffer> sli
+     iunab <buffer> str
      iunab <buffer> sysw
+     iunab <buffer> ub
+     iunab <buffer> var
     echo "CFEngine 3 Keyword Abbreviations disabled"
 endfunction
 
