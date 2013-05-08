@@ -22,10 +22,10 @@ endif
 let b:did_ftplugin = 1
 
 " =============== Keyword Abbreviations  ===============
-" disable keyword abbreviations with by adding 
-" "let g:DisableCFE3KeywordAbbreviations=0" to your vimrc
+" enable keyword abbreviations with by adding 
+" "let g:EnableCFE3KeywordAbbreviations=1" to your vimrc
 " Convenience function ToggleCFE3KeywordAbbreviations
-" mapped to ,i by default to toggle abbreviations off or on
+" mapped to ,i by default to toggle abbreviations on or off
 "
 function! EnableCFE3KeywordAbbreviations()
     iab <buffer> = =>
@@ -77,17 +77,17 @@ endfunction
 
 " Default abbreviations on
 " to disable let g:DisableCFE3KeywordAbbreviations=1 in ~/.vimrc
-if !exists('g:DisableCFE3KeywordAbbreviations')
-    let b:DisableCFE3KeywordAbbreviations=1
+if exists('g:EnableCFE3KeywordAbbreviations')
+    "let b:EnableCFE3KeywordAbbreviations=1
     call EnableCFE3KeywordAbbreviations()
 endif
 
 function! ToggleCFE3KeywordAbbreviations()
-    if !exists('b:DisableCFE3KeywordAbbreviations')
-        let b:DisableCFE3KeywordAbbreviations=1
+    if !exists('b:EnableCFE3KeywordAbbreviations')
+        let b:EnableCFE3KeywordAbbreviations=1
         call EnableCFE3KeywordAbbreviations()
     else
-        unlet b:DisableCFE3KeywordAbbreviations
+        unlet b:EnableCFE3KeywordAbbreviations
         call DisableCFE3KeywordAbbreviations()
     endif
 endfunction
