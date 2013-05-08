@@ -16,10 +16,10 @@ endif
 
 
 " Only do this when not done yet for this buffer
-if exists("b:loaded_CF3Ftplugin")
+if exists("b:loaded_CFE3Ftplugin")
   finish
 endif
-let b:loaded_CF3Ftplugin = 1
+let b:loaded_CFE3Ftplugin = 1
 
 " =============== Keyword Abbreviations  ===============
 " enable keyword abbreviations with by adding 
