@@ -24,7 +24,7 @@ let b:did_ftplugin = 1
 " =============== Keyword Abbreviations  ===============
 " disable keyword abbreviations with by adding 
 " "let g:DisableCFE3KeywordAbbreviations=0" to your vimrc
-" Conveniance function ToggleCFE3KeywordAbbreviations
+" Convenience function ToggleCFE3KeywordAbbreviations
 " mapped to ,i by default to toggle abbreviations off or on
 "
 function! EnableCFE3KeywordAbbreviations()
@@ -93,7 +93,7 @@ function! ToggleCFE3KeywordAbbreviations()
 endfunction
 
 function! EnableCFE3PermissionFix()
-" On Save set the permissions of the editied file so others cant access
+" On Save set the permissions of the edited file so others can't access
     :autocmd BufWritePost *.cf silent !chmod o-rwx %
 endfunction
 
@@ -195,7 +195,7 @@ endif
 nmap <buffer> <silent>  ,=  :call CF3AlignAssignments("null")<CR>
 nmap <buffer> <silent>  <ESC>=  :call CF3AlignAssignments("vars")<CR>
 
-" For pasting code snippers
+" For pasting code snippets
 function! Pastefile( FILE )
         let arg_file = $HOME."/.vim/snippets/".a:FILE
         let @" = join( readfile( arg_file ), "\n" )

@@ -7,12 +7,12 @@
 " TODO: 
 "	- would be great to know current promise type
 "
-" This is my first attempt at a syntax file.  Feel free to send me correctsion
+" This is my first attempt at a syntax file.  Feel free to send me corrections
 " or improvements.  I'll give you a credit.
 "
 " USAGE
-" There is already a vim file that uses 'cf' as a file extention.  You can use
-" cf3 for your cf3 file extentions or identify via your vimrc file:
+" There is already a vim file that uses 'cf' as a file extension.  You can use
+" cf3 for your cf3 file extensions or identify via your vimrc file:
 " au BufRead,BufNewFile *.cf set ft=cf3
 "
 " For version 5.x: Clear all syntax items
