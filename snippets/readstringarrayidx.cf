@@ -13,6 +13,6 @@
 
 		index_myarray::
 			"myindex"
-				comment => "Get index array loaded above.",
+				comment => "Get indexes of array loaded above.",
 				handle  => "mybundle_vars_myindex",
 				slist   => getindices( "myarray" );
