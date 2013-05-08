@@ -33,7 +33,8 @@ endfun
 *cf3abbreviations*
 
 The following expansions.  Type the first, in insert mode, then space and get
-the second automatically.
+the second automatically.  You must have "let EnableCFE3KeywordAbbreviations=1"
+in your ~/.vimrc or /etc/vimrc to enable this behavior.
 
 = =>
 bu bundle 
@@ -59,6 +60,10 @@ A tech preview. Insert your snippet files.  For example, in insert mode type //t
 *cf3folds*
 
 Does basic folding of body types using markers { and }.  See folds for normal commands.
+
+It may be useful to add
+autocmd BufRead,BufNewFile *.cf normal zR
+to your .vimrc in order to start up with all folds unfolded.
 
 *cf3maps*
 

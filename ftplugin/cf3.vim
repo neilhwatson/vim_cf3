@@ -16,10 +16,10 @@ endif
 
 
 " Only do this when not done yet for this buffer
-if exists("b:did_ftplugin")
+if exists("b:loaded_CF3Ftplugin")
   finish
 endif
-let b:did_ftplugin = 1
+let b:loaded_CF3Ftplugin = 1
 
 " =============== Keyword Abbreviations  ===============
 " enable keyword abbreviations with by adding 
@@ -75,10 +75,9 @@ function! DisableCFE3KeywordAbbreviations()
     echo "CFEngine 3 Keyword Abbreviations disabled"
 endfunction
 
-" Default abbreviations on
-" to disable let g:DisableCFE3KeywordAbbreviations=1 in ~/.vimrc
+" Default abbreviations off
+" to disable let g:EnableCFE3KeywordAbbreviations=1 in ~/.vimrc
 if exists('g:EnableCFE3KeywordAbbreviations')
-    "let b:EnableCFE3KeywordAbbreviations=1
     call EnableCFE3KeywordAbbreviations()
 endif
 
@@ -94,14 +93,13 @@ endfunction
 
 function! EnableCFE3PermissionFix()
 " On Save set the permissions of the edited file so others can't access
-    :autocmd BufWritePost *.cf silent !chmod o-rwx %
+    :autocmd BufWritePost *.cf silent !chmod g-w,o-rwx %
 endfunction
 
-" Default permission fix on
-" To disable permission fixing in your main .vimrc
-" let g:DisableCFE3PermissionFix=0
-if !exists('g:DisableCFE3PermissionFix')
-    let g:DisableCFE3PermissionFix=1
+" Default permission fix off
+" To enable permission fixing in your main .vimrc
+" let g:EnableCFE3PermissionFix=1
+if exists('g:EnableCFE3PermissionFix')
     call EnableCFE3PermissionFix()
 endif
 
