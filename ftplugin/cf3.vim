@@ -16,16 +16,16 @@ endif
 
 
 " Only do this when not done yet for this buffer
-if exists("b:did_ftplugin")
+if exists("b:loaded_CFE3Ftplugin")
   finish
 endif
-let b:did_ftplugin = 1
+let b:loaded_CFE3Ftplugin = 1
 
 " =============== Keyword Abbreviations  ===============
-" disable keyword abbreviations with by adding 
-" "let g:DisableCFE3KeywordAbbreviations=0" to your vimrc
+" enable keyword abbreviations with by adding 
+" "let g:EnableCFE3KeywordAbbreviations=1" to your vimrc
 " Convenience function ToggleCFE3KeywordAbbreviations
-" mapped to ,i by default to toggle abbreviations off or on
+" mapped to ,i by default to toggle abbreviations on or off
 "
 function! EnableCFE3KeywordAbbreviations()
     iab <buffer> = =>
@@ -75,33 +75,31 @@ function! DisableCFE3KeywordAbbreviations()
     echo "CFEngine 3 Keyword Abbreviations disabled"
 endfunction
 
-" Default abbreviations on
-" to disable let g:DisableCFE3KeywordAbbreviations=1 in ~/.vimrc
-if !exists('g:DisableCFE3KeywordAbbreviations')
-    let b:DisableCFE3KeywordAbbreviations=1
+" Default abbreviations off
+" to disable let g:EnableCFE3KeywordAbbreviations=1 in ~/.vimrc
+if exists('g:EnableCFE3KeywordAbbreviations')
     call EnableCFE3KeywordAbbreviations()
 endif
 
 function! ToggleCFE3KeywordAbbreviations()
-    if !exists('b:DisableCFE3KeywordAbbreviations')
-        let b:DisableCFE3KeywordAbbreviations=1
+    if !exists('b:EnableCFE3KeywordAbbreviations')
+        let b:EnableCFE3KeywordAbbreviations=1
         call EnableCFE3KeywordAbbreviations()
     else
-        unlet b:DisableCFE3KeywordAbbreviations
+        unlet b:EnableCFE3KeywordAbbreviations
         call DisableCFE3KeywordAbbreviations()
     endif
 endfunction
 
 function! EnableCFE3PermissionFix()
 " On Save set the permissions of the edited file so others can't access
-    :autocmd BufWritePost *.cf silent !chmod o-rwx %
+    :autocmd BufWritePost *.cf silent !chmod g-w,o-rwx %
 endfunction
 
-" Default permission fix on
-" To disable permission fixing in your main .vimrc
-" let g:DisableCFE3PermissionFix=0
-if !exists('g:DisableCFE3PermissionFix')
-    let g:DisableCFE3PermissionFix=1
+" Default permission fix off
+" To enable permission fixing in your main .vimrc
+" let g:EnableCFE3PermissionFix=1
+if exists('g:EnableCFE3PermissionFix')
     call EnableCFE3PermissionFix()
 endif
 
