@@ -143,7 +143,7 @@ syn keyword cf3ControlAttr	ignore_missing_bundles ignore_missing_inputs inputs c
 syn keyword cf3ControlAttr	version lastseenexpireafter output_prefix domain contained
 syn keyword cf3ControlAttr	require_comments host_licenses_paid site_classes contained
 syn keyword cf3ControlAttr	syslog_host syslog_port fips_mode contained
-syn keyword cf3MethodAttr	usebundle inherit contained
+syn keyword cf3MethodAttr	usebundle useresult inherit contained
 syn keyword cf3CommonAttr	action classes ifvarclass handle depends_on comment policy contained
 syn keyword cf3ClassesAttr	or and xor dist expression not select_class contained
 syn keyword cf3CommandsAttr args contain module contained
@@ -171,6 +171,7 @@ syn keyword cf3MeasurementsAttr	stream_type data_type history_type contained
 syn keyword cf3MeasurementsAttr	units match_value contained
 syn keyword cf3ReportsAttr	friend_pattern intermittency lastseen contained
 syn keyword cf3ReportsAttr	printfile report_to_file showstate contained
+syn keyword cf3ReportsAttr	bundle_return_value_index contained
 
 " Bodies
 syn keyword cf3EditLineAttr	replace_with edit_field whitespace_policy location contained 
