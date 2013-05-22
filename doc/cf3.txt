@@ -30,27 +30,36 @@ endfun
 
 *cf3usage*
 
+Add "let EnableCFE3PermissionFix=1" to your .vimrc in order to enable
+automatic permission fixing, which removes group write and all "other"
+permissions from a file upon saving.
+
 *cf3abbreviations*
 
 The following expansions.  Type the first, in insert mode, then space and get
-the second automatically.
+the second automatically.  Add "let EnableCFE3KeywordAbbreviations=1" to your
+.vimrc to enable this behavior.
 
 = =>
+ba bundle agent
+bc bundle common
 bu bundle 
-han handle => "
+cano canonify(
 cla classes:
 comma commands:
 comme comment => "
+exp expression => 
 fil files:
+han handle => "
+ifv ifvarclass =>
 met methods:
 pro processes:
 rep reports:
-var vars:
-ba bundle agent
-bc bundle common
-ub usebundle =>
-str string =>
 sli slist =>
+str string =>
+sysw ${sys.workdir}
+ub usebundle =>
+var vars:
 
 *cf3snippets
 
@@ -59,6 +68,10 @@ A tech preview. Insert your snippet files.  For example, in insert mode type //t
 *cf3folds*
 
 Does basic folding of body types using markers { and }.  See folds for normal commands.
+
+It may be useful to add
+autocmd BufRead,BufNewFile *.cf normal zR
+to your .vimrc in order to start up with all folds unfolded.
 
 *cf3maps*
 
