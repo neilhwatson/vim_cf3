@@ -97,6 +97,18 @@ syn keyword cf3BuiltIns reglist remoteclassesmatching remotescalar returnszero r
 syn keyword cf3BuiltIns some splayclass splitstring strcmp strftime sublist contained
 syn keyword cf3BuiltIns sum translatepath uniq usemodule userexists contained
 
+" evolve_freelib.cf -rw-r--r--  1 ivan  staff  59012 Jun 27 18:05
+" https://github.com/evolvethinking/evolve_cfengine_freelib
+ 
+" The following list may be automatically generated using
+" tools/extract_cf3evolve_freelib.sh in CFEngine source code directory.
+"
+syn keyword cf3Evolve_freelib contain_efl_command efl_bug2638 efl_c efl_chkconfig_disable_service efl_chkconfig_enable_service contained
+syn keyword cf3Evolve_freelib efl_class_classmatch efl_class_cmd_regcmp efl_class_hostname efl_class_iprange efl_command efl_copy_files contained
+syn keyword cf3Evolve_freelib efl_cpf efl_delete_files efl_edit_template efl_file_perms efl_global_strings efl_lastseen contained
+syn keyword cf3Evolve_freelib efl_link efl_main efl_mon_cfengine efl_notseen efl_packages efl_service contained
+syn keyword cf3Evolve_freelib efl_skeleton efl_source_type efl_start_service efl_sysctl_conf_file efl_sysctl_live el_efl_sysctl_conf_file contained
+syn keyword cf3Evolve_freelib elf_bug1780 name_age_negate negate_by_name contained
 
 " Stdlib: -rw-r--r--  1 ivan  staff  59012 Jun 27 18:05
 " /Users/ivan/Downloads/cfengine_stdlib.cf
@@ -136,7 +148,7 @@ syn keyword cf3Stdlib warn_lines_matching warn_only windows_feature yum yum_grou
 syn keyword cf3Stdlib yum_rpm_enable_repo zypper contained
 
 "syn	match	cf3Function		/\w\+[,;(\>]/ contains=cf3BuiltIns,cf3Stdlib
-syn	match	cf3Function		/\<\w\+[,;()]/ contains=cf3BuiltIns,cf3Stdlib
+syn	match	cf3Function		/\<\w\+[,;()]/ contains=cf3BuiltIns,cf3Stdlib,cf3Evolve_freelib 
 
 syn keyword cf3ControlAttr	bundlesequence goal_categories contained
 syn keyword cf3ControlAttr	ignore_missing_bundles ignore_missing_inputs inputs contained
@@ -345,6 +357,7 @@ if version >= 508 || !exists("did_cfg_syn_inits")
 
 	HiLink cf3String        String
 	HiLink cf3BuiltIns		Function
+   HiLink cf3Evolve_freelib Function
 	HiLink cf3Stdlib		Function
 
     HiLink cf3Identifier    cf3Arrows
