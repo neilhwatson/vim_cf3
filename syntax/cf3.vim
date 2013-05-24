@@ -74,27 +74,29 @@ syn region  cf3Fold 	    start="{" end="}" transparent fold
 
 syn keyword cf3Type			string int real slist ilist rlist
 
-syn keyword cf3BuiltIns		accessedbefore accumulated ago and contained
-syn keyword cf3BuiltIns		canonify concat changedbefore classify contained
-syn keyword cf3BuiltIns		classmatch countclassesmatching contained
-syn keyword cf3BuiltIns		countlinesmatching diskfree escape execresult contained 
-syn keyword cf3BuiltIns		fileexists filesexist filesize getenv getfields contained
-syn keyword cf3BuiltIns		getgid getindices getuid getusers getvalues grep contained
-syn keyword cf3BuiltIns		groupexists hash hashmatch host2ip ip2host contained
-syn keyword cf3BuiltIns		hostinnetgroup hostrange hostsseen hubknowledge contained
-syn keyword cf3BuiltIns		iprange irange isdir isexecutable isgreaterthan contained
-syn keyword cf3BuiltIns		islessthan islink isnewerthan isplain isvariable contained
-syn keyword cf3BuiltIns		join lastnode laterthan ldaparray ldaplist contained
-syn keyword cf3BuiltIns		ldapvalue not now on or parseintarray contained 
-syn keyword cf3BuiltIns		parserealarray parsestringarray parsestringarrayidx contained
-syn keyword cf3BuiltIns		peers peerleader peerleaders product randomint contained
-syn keyword cf3BuiltIns		readfile readintarray readintlist readrealarray contained
-syn keyword cf3BuiltIns		readreallist readstringarray readstringarrayidx contained
-syn keyword cf3BuiltIns		readstringlist readtcp regarray regcmp regextract contained
-syn keyword cf3BuiltIns		registryvalue regline reglist regldap remotescalar contained
-syn keyword cf3BuiltIns		remoteclassesmatching returnszero rrange selectservers contained
-syn keyword cf3BuiltIns		splayclass splitstring strcmp sum translatepath contained
-syn keyword cf3BuiltIns		usemodule userexists maplist contained
+" The following list may be automatically generated using
+" tools/extract_cf3BuiltIns.sh in CFEngine source code directory.
+
+syn keyword cf3BuiltIns  accessedbefore accumulated ago and canonify contained
+syn keyword cf3BuiltIns changedbefore classesmatching classify classmatch concat countclassesmatching contained
+syn keyword cf3BuiltIns countlinesmatching difference dirname diskfree escape every contained
+syn keyword cf3BuiltIns execresult fileexists filesexist filesize filestat filter contained
+syn keyword cf3BuiltIns format getenv getfields getgid getindices getuid contained
+syn keyword cf3BuiltIns getusers getvalues grep groupexists hash hashmatch contained
+syn keyword cf3BuiltIns host2ip hostinnetgroup hostrange hostsseen hostswithclass hubknowledge contained
+syn keyword cf3BuiltIns ifelse innetgroup intersection ip2host iprange irange contained
+syn keyword cf3BuiltIns isdir isexecutable isgreaterthan islessthan islink isnewerthan contained
+syn keyword cf3BuiltIns isplain isvariable join lastnode laterthan ldaparray contained
+syn keyword cf3BuiltIns ldaplist ldapvalue length lsdir maparray maplist contained
+syn keyword cf3BuiltIns none not now nth on or contained
+syn keyword cf3BuiltIns parseintarray parserealarray parsestringarray parsestringarrayidx peerleader peerleaders contained
+syn keyword cf3BuiltIns peers product randomint readfile readintarray readintlist contained
+syn keyword cf3BuiltIns readrealarray readreallist readstringarray readstringarrayidx readstringlist readtcp contained
+syn keyword cf3BuiltIns regarray regcmp regextract registryvalue regldap regline contained
+syn keyword cf3BuiltIns reglist remoteclassesmatching remotescalar returnszero rrange selectservers contained
+syn keyword cf3BuiltIns some splayclass splitstring strcmp strftime sublist contained
+syn keyword cf3BuiltIns sum translatepath uniq usemodule userexists contained
+
 
 " Stdlib: -rw-r--r--  1 ivan  staff  59012 Jun 27 18:05
 " /Users/ivan/Downloads/cfengine_stdlib.cf
