@@ -121,7 +121,7 @@ nmap <buffer> ,k Obody common control
 \<CR>};
 \<CR>
 \<CR>inputs => {
-\<CR>"cfengine_stdlib.cf",
+\<CR>"libraries/cfengine_stdlib.cf",
 \<CR>};
 \<CR>}
 \<CR>
