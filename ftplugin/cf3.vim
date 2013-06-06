@@ -115,7 +115,6 @@ vmap <buffer> ,q :s/^\s*\(.*\)\s*$/"\1",/g<CR>
 " Insert whole self contained skeleton
 nmap <buffer> ,k Obody common control
 \<CR>{
-\<CR>
 \<CR>bundlesequence => {
 \<CR>"main",
 \<CR>};
@@ -127,16 +126,12 @@ nmap <buffer> ,k Obody common control
 \<CR>
 \<CR>bundle agent main
 \<CR>{
-\<CR>
 \<CR>methods:
-\<CR>
 \<CR><TAB>"any" usebundle => test;
-\<CR>
 \<CR>}
 \<CR>
 \<CR>bundle agent test
 \<CR>{
-\<CR>
 \<CR>}<ESC>
 
 " Function to align groups of => assignment lines.
