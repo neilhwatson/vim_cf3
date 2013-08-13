@@ -77,25 +77,24 @@ syn keyword cf3Type			string int real slist ilist rlist
 " The following list may be automatically generated using
 " tools/extract_cf3BuiltIns.sh in CFEngine source code directory.
 
-syn keyword cf3BuiltIns  accessedbefore accumulated ago and canonify contained
-syn keyword cf3BuiltIns changedbefore classesmatching classify classmatch concat countclassesmatching contained
-syn keyword cf3BuiltIns countlinesmatching difference dirname diskfree escape every contained
-syn keyword cf3BuiltIns execresult fileexists filesexist filesize filestat filter contained
-syn keyword cf3BuiltIns format getenv getfields getgid getindices getuid contained
-syn keyword cf3BuiltIns getusers getvalues grep groupexists hash hashmatch contained
-syn keyword cf3BuiltIns host2ip hostinnetgroup hostrange hostsseen hostswithclass hubknowledge contained
-syn keyword cf3BuiltIns ifelse innetgroup intersection ip2host iprange irange contained
-syn keyword cf3BuiltIns isdir isexecutable isgreaterthan islessthan islink isnewerthan contained
-syn keyword cf3BuiltIns isplain isvariable join lastnode laterthan ldaparray contained
-syn keyword cf3BuiltIns ldaplist ldapvalue length lsdir maparray maplist contained
-syn keyword cf3BuiltIns none not now nth on or contained
-syn keyword cf3BuiltIns parseintarray parserealarray parsestringarray parsestringarrayidx peerleader peerleaders contained
-syn keyword cf3BuiltIns peers product randomint readfile readintarray readintlist contained
-syn keyword cf3BuiltIns readrealarray readreallist readstringarray readstringarrayidx readstringlist readtcp contained
-syn keyword cf3BuiltIns regarray regcmp regextract registryvalue regldap regline contained
-syn keyword cf3BuiltIns reglist remoteclassesmatching remotescalar returnszero rrange selectservers contained
-syn keyword cf3BuiltIns some splayclass splitstring strcmp strftime sublist contained
-syn keyword cf3BuiltIns sum translatepath uniq usemodule userexists contained
+syn keyword cf3BuiltIns	 accessedbefore accumulated ago and canonify contained
+syn keyword cf3BuiltIns	changedbefore classesmatching classify classmatch concat countclassesmatching contained
+syn keyword cf3BuiltIns	countlinesmatching difference dirname diskfree escape every contained
+syn keyword cf3BuiltIns	execresult fileexists filesexist filesize filestat filter contained
+syn keyword cf3BuiltIns	format getenv getfields getgid getindices getuid contained
+syn keyword cf3BuiltIns	getusers getvalues grep groupexists hash hashmatch contained
+syn keyword cf3BuiltIns	host2ip hostinnetgroup hostrange hostsseen hostswithclass hubknowledge contained
+syn keyword cf3BuiltIns	ifelse intersection ip2host iprange irange isdir contained
+syn keyword cf3BuiltIns	isexecutable isgreaterthan islessthan islink isnewerthan isplain contained
+syn keyword cf3BuiltIns	isvariable join lastnode laterthan ldaparray ldaplist contained
+syn keyword cf3BuiltIns	ldapvalue length lsdir maparray maplist none contained
+syn keyword cf3BuiltIns	not now nth on or parseintrealstringarray contained
+syn keyword cf3BuiltIns	parsestringarrayidx peerleader peerleaders peers product randomint contained
+syn keyword cf3BuiltIns	readfile readintrealstringarray readintrealstringlist readstringarrayidx readtcp regarray contained
+syn keyword cf3BuiltIns	regcmp regextract registryvalue regldap regline reglist contained
+syn keyword cf3BuiltIns	remoteclassesmatching remotescalar returnszero rrange selectservers shuffle contained
+syn keyword cf3BuiltIns	some sort splayclass splitstring strcmp strftime contained
+syn keyword cf3BuiltIns	sublist sum translatepath unique usemodule userexists contained
 
 " evolve_freelib.cf -rw-r--r--  1 ivan  staff  59012 Jun 27 18:05
 " https://github.com/evolvethinking/evolve_cfengine_freelib
@@ -103,12 +102,13 @@ syn keyword cf3BuiltIns sum translatepath uniq usemodule userexists contained
 " The following list may be automatically generated using
 " tools/extract_cf3evolve_freelib.sh in CFEngine source code directory.
 "
-syn keyword cf3Evolve_freelib contain_efl_command efl_bug2638 efl_c efl_chkconfig_disable_service efl_chkconfig_enable_service contained
-syn keyword cf3Evolve_freelib efl_class_classmatch efl_class_cmd_regcmp efl_class_hostname efl_class_iprange efl_command efl_copy_files contained
-syn keyword cf3Evolve_freelib efl_cpf efl_delete_files efl_edit_template efl_file_perms efl_global_strings efl_lastseen contained
-syn keyword cf3Evolve_freelib efl_link efl_main efl_mon_cfengine efl_notseen efl_packages efl_service contained
-syn keyword cf3Evolve_freelib efl_skeleton efl_source_type efl_start_service efl_sysctl_conf_file efl_sysctl_live el_efl_sysctl_conf_file contained
-syn keyword cf3Evolve_freelib elf_bug1780 name_age_negate negate_by_name contained
+
+syn keyword cf3Evolve_freelib	 by_command contain_efl_command efl_bug2638 efl_c efl_chkconfig_disable_service contained
+syn keyword cf3Evolve_freelib	efl_chkconfig_enable_service efl_class_classmatch efl_class_cmd_regcmp efl_class_hostname efl_class_iprange efl_command contained
+syn keyword cf3Evolve_freelib	efl_copy_files efl_cpf efl_delete_files efl_edit_template efl_file_perms efl_global_strings contained
+syn keyword cf3Evolve_freelib	efl_lastseen efl_link efl_main efl_mon_cfengine efl_notseen efl_packages contained
+syn keyword cf3Evolve_freelib	efl_rkn efl_service efl_skeleton efl_source_type efl_start_service efl_sysctl_conf_file contained
+syn keyword cf3Evolve_freelib	efl_sysctl_live efl_ulog el_efl_sysctl_conf_file elf_bug1780 name_age_negate negate_by_name contained
 
 " Stdlib: -rw-r--r--  1 ivan  staff  59012 Jun 27 18:05
 " /Users/ivan/Downloads/cfengine_stdlib.cf
@@ -116,36 +116,36 @@ syn keyword cf3Evolve_freelib elf_bug1780 name_age_negate negate_by_name contain
 " The following list may be automatically generated using
 " tools/extract_cf3Stdlib.sh in CFEngine source code directory.
 
-syn keyword cf3Stdlib  INI_section access_generic after all all_changes contained
-syn keyword cf3Stdlib alpinelinux always any_count append_groups_starting append_if_no_line append_if_no_lines contained
-syn keyword cf3Stdlib append_to_line_end append_user_field append_users_starting apt apt_get apt_get_release contained
-syn keyword cf3Stdlib backup_local_cp backup_timestamp before bg bootstart by_name contained
-syn keyword cf3Stdlib cf2_if_else check_range classes_generic cmd_repair col comment contained
-syn keyword cf3Stdlib comment_lines_containing comment_lines_matching create_solaris_admin_file cronjob days_old days_older_than contained
-syn keyword cf3Stdlib debian_knowledge delete_lines_matching detect_all_change detect_all_change_using detect_content detect_content_using contained
-syn keyword cf3Stdlib diff diff_noupdate dirs disable dpkg_version emerge contained
-syn keyword cf3Stdlib empty enumerate ex_list exclude exclude_procs expand_template contained
-syn keyword cf3Stdlib fileinfo filetype_older_than filetypes_older_than force_deps freebsd generic contained
-syn keyword cf3Stdlib if_elapsed if_elapsed_day if_else if_notkept if_ok if_ok_cancel contained
-syn keyword cf3Stdlib if_repaired ifwin_bg immediate in_dir in_dir_shell in_dir_shell_and_silent contained
-syn keyword cf3Stdlib in_shell in_shell_and_silent in_shell_bg include_base insert_file insert_lines contained
-syn keyword cf3Stdlib ips jail kvm line line_match_value linkchildren contained
-syn keyword cf3Stdlib ln_s local_cp local_dcp local_mysql local_postgresql log_repaired contained
-syn keyword cf3Stdlib log_verbose m maintain_key_values manage_variable_values_ini measure_performance min_free_space contained
-syn keyword cf3Stdlib mo mog msi_explicit msi_implicit name_age nfs contained
-syn keyword cf3Stdlib nfs_p no_backup no_backup_cp no_backup_dcp no_backup_rcp noupdate contained
-syn keyword cf3Stdlib ntfs og older_than opencsw owner pacman contained
-syn keyword cf3Stdlib paths perms_cp plain policy quoted_var recurse contained
-syn keyword cf3Stdlib recurse_ignore recurse_with_base regex_replace remote_cp remote_dcp replace_line_end contained
-syn keyword cf3Stdlib replace_or_add resolvconf rm_rf rotate rpm_filebased rpm_version contained
-syn keyword cf3Stdlib sample_rate scan_changing_file scan_log scoped_classes_generic secure_cp seed_cp contained
-syn keyword cf3Stdlib set_colon_field set_config_values set_config_values_matching set_quoted_values set_user_field set_variable_values contained
-syn keyword cf3Stdlib set_variable_values_ini setuid setuid_sh setuid_umask setuidgid_sh silent contained
-syn keyword cf3Stdlib silent_in_dir single_value size_range smartos solaris standard_services contained
-syn keyword cf3Stdlib start state_repaired std_defs strict sync_cp tidy contained
-syn keyword cf3Stdlib to uncomment uncomment_lines_containing uncomment_lines_matching unmount value contained
-syn keyword cf3Stdlib warn_lines_matching warn_only windows_feature yum yum_group yum_rpm contained
-syn keyword cf3Stdlib yum_rpm_enable_repo zypper contained
+syn keyword cf3Stdlib	 INI_section access_generic after all all_changes contained
+syn keyword cf3Stdlib	alpinelinux always any_count append_groups_starting append_if_no_line append_if_no_lines contained
+syn keyword cf3Stdlib	append_to_line_end append_user_field append_users_starting apt apt_get apt_get_release contained
+syn keyword cf3Stdlib	backup_local_cp backup_timestamp before bg bootstart by_name contained
+syn keyword cf3Stdlib	cf2_if_else check_range classes_generic cmd_repair col comment contained
+syn keyword cf3Stdlib	comment_lines_containing comment_lines_matching create_solaris_admin_file cronjob days_old days_older_than contained
+syn keyword cf3Stdlib	debian_knowledge delete_lines_matching detect_all_change detect_all_change_using detect_content detect_content_using contained
+syn keyword cf3Stdlib	diff diff_noupdate dirs disable dpkg_version emerge contained
+syn keyword cf3Stdlib	empty enumerate ex_list exclude exclude_procs expand_template contained
+syn keyword cf3Stdlib	fileinfo filetype_older_than filetypes_older_than force_deps freebsd freebsd_portmaster contained
+syn keyword cf3Stdlib	generic if_elapsed if_elapsed_day if_else if_notkept if_ok contained
+syn keyword cf3Stdlib	if_ok_cancel if_repaired ifwin_bg immediate in_dir in_dir_shell contained
+syn keyword cf3Stdlib	in_dir_shell_and_silent in_shell in_shell_and_silent in_shell_bg include_base insert_file contained
+syn keyword cf3Stdlib	insert_lines ips jail kvm line line_match_value contained
+syn keyword cf3Stdlib	linkchildren ln_s local_cp local_dcp local_mysql local_postgresql contained
+syn keyword cf3Stdlib	log_repaired log_verbose m maintain_key_values manage_variable_values_ini measure_performance contained
+syn keyword cf3Stdlib	min_free_space mo mog msi_explicit msi_implicit name_age contained
+syn keyword cf3Stdlib	nfs nfs_p no_backup no_backup_cp no_backup_dcp no_backup_rcp contained
+syn keyword cf3Stdlib	noupdate ntfs og older_than opencsw owner contained
+syn keyword cf3Stdlib	pacman paths perms_cp plain policy quoted_var contained
+syn keyword cf3Stdlib	recurse recurse_ignore recurse_with_base regex_replace remote_cp remote_dcp contained
+syn keyword cf3Stdlib	replace_line_end replace_or_add resolvconf rm_rf rotate rpm_filebased contained
+syn keyword cf3Stdlib	rpm_version sample_rate scan_changing_file scan_log scoped_classes_generic secure_cp contained
+syn keyword cf3Stdlib	seed_cp set_colon_field set_config_values set_config_values_matching set_quoted_values set_user_field contained
+syn keyword cf3Stdlib	set_variable_values set_variable_values_ini setuid setuid_sh setuid_umask setuidgid_sh contained
+syn keyword cf3Stdlib	silent silent_in_dir single_value size_range smartos solaris contained
+syn keyword cf3Stdlib	standard_services start state_repaired std_defs strict sync_cp contained
+syn keyword cf3Stdlib	tidy to uncomment uncomment_lines_containing uncomment_lines_matching unmount contained
+syn keyword cf3Stdlib	value warn_lines_matching warn_only windows_feature yum yum_group contained
+syn keyword cf3Stdlib	yum_rpm yum_rpm_enable_repo zypper contained
 
 "syn	match	cf3Function		/\w\+[,;(\>]/ contains=cf3BuiltIns,cf3Stdlib
 syn	match	cf3Function		/\<\w\+[,;()]/ contains=cf3BuiltIns,cf3Stdlib,cf3Evolve_freelib 
