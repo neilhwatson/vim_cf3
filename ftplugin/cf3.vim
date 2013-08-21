@@ -112,27 +112,6 @@ nmap <buffer> ,q dE<ESC>i"<ESC>pa"<ESC>
 nmap <buffer> ,p o""<CR><TAB>handle => "",<CR>comment => ""<ESC>
 " quote list items
 vmap <buffer> ,q :s/^\s*\(.*\)\s*$/"\1",/g<CR>
-" Insert whole self contained skeleton
-nmap <buffer> ,k Obody common control
-\<CR>{
-\<CR>bundlesequence => {
-\<CR>"main",
-\<CR>};
-\<CR>
-\<CR>inputs => {
-\<CR>"libraries/cfengine_stdlib.cf",
-\<CR>};
-\<CR>}
-\<CR>
-\<CR>bundle agent main
-\<CR>{
-\<CR>methods:
-\<CR><TAB>"any" usebundle => test;
-\<CR>}
-\<CR>
-\<CR>bundle agent test
-\<CR>{
-\<CR>}<ESC>
 
 " Function to align groups of => assignment lines.
 " Credit to 'Scripting the Vim editor, Part 2: User-defined functions'
@@ -196,10 +175,9 @@ function! Pastefile( FILE )
         return ""
 endfunction
 
-imap <buffer> //tmp <c-r>=Pastefile( "template.cf" )<CR><ESC>A
+nmap <buffer> ,k :read $HOME/.vim/snippets/template.cf<CR>kdd
 
 " TODO
-" Folding
 " Indents
 
 " CREDITS
