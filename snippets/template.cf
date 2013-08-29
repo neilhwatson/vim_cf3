@@ -3,10 +3,6 @@ body common control
 	bundlesequence => {
 		"main",
 	};
-
-	inputs => {
-		"libraries/cfengine_stdlib.cf",
-	};
 }
 
 bundle agent main
