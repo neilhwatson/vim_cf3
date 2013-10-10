@@ -100,19 +100,18 @@ syn keyword cf3BuiltIns	shuffle some sort splayclass splitstring strcmp containe
 syn keyword cf3BuiltIns	strftime sublist sum translatepath unique usemodule contained
 syn keyword cf3BuiltIns	userexists contained
 
-" evolve_freelib.cf -rw-r--r--  1 ivan  staff  59012 Jun 27 18:05
-" https://github.com/evolvethinking/evolve_cfengine_freelib
- 
 " The following list may be automatically generated using
-" tools/extract_cf3evolve_freelib.sh in CFEngine source code directory.
-"
+" tools/extract_cf3evolve_freelib.sh
 
-syn keyword cf3Evolve_freelib	 by_command contain_efl_command efl_bug2638 efl_c efl_chkconfig_disable_service contained
-syn keyword cf3Evolve_freelib	efl_chkconfig_enable_service efl_class_classmatch efl_class_cmd_regcmp efl_class_hostname efl_class_iprange efl_command contained
-syn keyword cf3Evolve_freelib	efl_copy_files efl_cpf efl_delete_files efl_edit_template efl_file_perms efl_global_strings contained
-syn keyword cf3Evolve_freelib	efl_lastseen efl_link efl_main efl_mon_cfengine efl_notseen efl_packages contained
-syn keyword cf3Evolve_freelib	efl_rkn efl_service efl_skeleton efl_source_type efl_start_service efl_sysctl_conf_file contained
-syn keyword cf3Evolve_freelib	efl_sysctl_live efl_ulog el_efl_sysctl_conf_file elf_bug1780 name_age_negate negate_by_name contained
+" Last update: 2013/10/10 - git tag 1a04f9b6e461efff5869f1d3b59ab09c8115775e
+
+syn keyword cf3Evolve_freelib   by_command by_pid contain_efl_command efl_bug2638 efl_bug3430 contained
+syn keyword cf3Evolve_freelib  efl_c efl_chkconfig_disable_service efl_chkconfig_enable_service efl_class_classmatch efl_class_cmd_regcmp efl_class_hostname contained
+syn keyword cf3Evolve_freelib  efl_class_iprange efl_command efl_copy_files efl_cpf efl_delete_files efl_delta_reporting contained
+syn keyword cf3Evolve_freelib  efl_edit_template efl_file_perms efl_global_strings efl_lastseen efl_link efl_main contained
+syn keyword cf3Evolve_freelib  efl_mon_cfengine efl_notseen efl_packages efl_rkn efl_service efl_skeleton contained
+syn keyword cf3Evolve_freelib  efl_source_type efl_start_service efl_sysctl_conf_file efl_sysctl_live el_efl_sysctl_conf_file name_age_negate contained
+syn keyword cf3Evolve_freelib  negate_by_name contained
 
 " The following list may be automatically generated using
 " tools/extract_cf3Stdlib.sh
