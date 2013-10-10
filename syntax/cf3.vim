@@ -75,26 +75,30 @@ syn region  cf3Fold 	    start="{" end="}" transparent fold
 syn keyword cf3Type			string int real slist ilist rlist
 
 " The following list may be automatically generated using
-" tools/extract_cf3BuiltIns.sh in CFEngine source code directory.
+" tools/extract_cf3BuiltIns.sh 
+
+" Last update: 2013/10/10 - git tag e40c31e901ff2396d25658af578873353ad06499
 
 syn keyword cf3BuiltIns	 accessedbefore accumulated ago and canonify contained
-syn keyword cf3BuiltIns	changedbefore classesmatching classify classmatch concat countclassesmatching contained
-syn keyword cf3BuiltIns	countlinesmatching difference dirname diskfree escape every contained
-syn keyword cf3BuiltIns	execresult fileexists filesexist filesize filestat filter contained
-syn keyword cf3BuiltIns	format getenv getfields getgid getindices getuid contained
-syn keyword cf3BuiltIns	getusers getvalues grep groupexists hash hashmatch contained
-syn keyword cf3BuiltIns	host2ip hostinnetgroup hostrange hostsseen hostswithclass hubknowledge contained
-syn keyword cf3BuiltIns	ifelse intersection ip2host iprange irange isdir contained
-syn keyword cf3BuiltIns	isexecutable isgreaterthan islessthan islink isnewerthan isplain contained
-syn keyword cf3BuiltIns	isvariable join lastnode laterthan ldaparray ldaplist contained
-syn keyword cf3BuiltIns	ldapvalue length lsdir maparray maplist none contained
-syn keyword cf3BuiltIns	not now nth on or parseintrealstringarray contained
-syn keyword cf3BuiltIns	parsestringarrayidx peerleader peerleaders peers product randomint contained
-syn keyword cf3BuiltIns	readfile readintrealstringarray readintrealstringlist readstringarrayidx readtcp regarray contained
+syn keyword cf3BuiltIns	canonifyuniquely changedbefore classesmatching classify classmatch concat contained
+syn keyword cf3BuiltIns	countclassesmatching countlinesmatching difference dirname diskfree escape contained
+syn keyword cf3BuiltIns	eval every execresult fileexists filesexist filesize contained
+syn keyword cf3BuiltIns	filestat filter findfiles format getenv getfields contained
+syn keyword cf3BuiltIns	getgid getindices getuid getusers getvalues grep contained
+syn keyword cf3BuiltIns	groupexists hash hashmatch host2ip hostinnetgroup hostrange contained
+syn keyword cf3BuiltIns	hostsseen hostswithclass hubknowledge ifelse intersection ip2host contained
+syn keyword cf3BuiltIns	iprange irange isdir isexecutable isgreaterthan islessthan contained
+syn keyword cf3BuiltIns	islink isnewerthan isplain isvariable join lastnode contained
+syn keyword cf3BuiltIns	laterthan ldaparray ldaplist ldapvalue length lsdir contained
+syn keyword cf3BuiltIns	maparray maplist mergecontainer none not now contained
+syn keyword cf3BuiltIns	nth on or parseintrealstringarray parsejson parsestringarrayidx contained
+syn keyword cf3BuiltIns	peerleader peerleaders peers product randomint readfile contained
+syn keyword cf3BuiltIns	readintrealstringarray readintrealstringlist readjson readstringarrayidx readtcp regarray contained
 syn keyword cf3BuiltIns	regcmp regextract registryvalue regldap regline reglist contained
-syn keyword cf3BuiltIns	remoteclassesmatching remotescalar returnszero rrange selectservers shuffle contained
-syn keyword cf3BuiltIns	some sort splayclass splitstring strcmp strftime contained
-syn keyword cf3BuiltIns	sublist sum translatepath unique usemodule userexists contained
+syn keyword cf3BuiltIns	remoteclassesmatching remotescalar returnszero reverse rrange selectservers contained
+syn keyword cf3BuiltIns	shuffle some sort splayclass splitstring strcmp contained
+syn keyword cf3BuiltIns	strftime sublist sum translatepath unique usemodule contained
+syn keyword cf3BuiltIns	userexists contained
 
 " evolve_freelib.cf -rw-r--r--  1 ivan  staff  59012 Jun 27 18:05
 " https://github.com/evolvethinking/evolve_cfengine_freelib
