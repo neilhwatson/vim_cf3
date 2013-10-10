@@ -1,9 +1,12 @@
 #!/bin/sh
 
+# Loic Pefferkorn <loic-cfengine@loicp.eu>
+
 # Extract functions from CFEngine documentation. Should be run
-# inside CFEngine source code directory:
+# inside CFEngine/documentation repository, in reference/functions directory:
 #
-# cd cfengine-3.4.2
+# git clone https://github.com/cfengine/documentation.git
+# cd documentation/reference/functions
 # ~/path/to/tools/extract_cf3BuiltIns.sh
 
 find $1 -type f -name '*.markdown' -printf "%f "|\
