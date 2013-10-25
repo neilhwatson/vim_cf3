@@ -5,7 +5,6 @@ syntax on
 filetype plugin indent on
 
 :helptags ~/.vim/doc/
-au BufRead,BufNewFile *.cf set ft=cf3
 " enable vim_cf3 plugin abbreviations
 let g:EnableCFE3KeywordAbbreviations=1
 
