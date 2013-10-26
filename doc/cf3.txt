@@ -5,11 +5,11 @@
 Install the provided files.
 .vim/ftplugin/cf3.vim
 .vim/syntax/cf3.vim
+.vim/ftdetect/cf3.vim
 .vim/doc/cf3.txt
 
 Add to your .vimrc file:
 
-au BufRead,BufNewFile *.cf set ft=cf3
 :helptags ~/.vim/doc/
 
 *cf3prerequisites*
