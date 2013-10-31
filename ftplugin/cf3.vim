@@ -105,13 +105,13 @@ endif
 
 " maps
 " Toggle KeywordAbbreviations
-nmap <buffer> ,i :call ToggleCFE3KeywordAbbreviations()<CR>
+nnoremap <buffer> ,i :call ToggleCFE3KeywordAbbreviations()<CR>
 " Wrap WORD in double quotes
-nmap <buffer> ,q dE<ESC>i"<ESC>pa"<ESC>
+nnoremap <buffer> ,q dE<ESC>i"<ESC>pa"<ESC>
 " Insert blank promise
-nmap <buffer> ,p o""<CR><TAB>handle => "",<CR>comment => ""<ESC>
+nnoremap <buffer> ,p o""<CR><TAB>handle => "",<CR>comment => ""<ESC>
 " quote list items
-vmap <buffer> ,q :s/^\s*\(.*\)\s*$/"\1",/g<CR>
+vnoremap <buffer> ,q :s/^\s*\(.*\)\s*$/"\1",/g<CR>
 
 " Function to align groups of => assignment lines.
 " Credit to 'Scripting the Vim editor, Part 2: User-defined functions'
@@ -164,8 +164,8 @@ function CF3AlignAssignments (AOP)
 endfunction
 endif
 
-nmap <buffer> <silent>  ,=  :call CF3AlignAssignments("null")<CR>
-nmap <buffer> <silent>  <ESC>=  :call CF3AlignAssignments("vars")<CR>
+nnoremap <buffer> <silent>  ,=  :call CF3AlignAssignments("null")<CR>
+nnoremap <buffer> <silent>  <ESC>=  :call CF3AlignAssignments("vars")<CR>
 
 " For pasting code snippets
 function! Pastefile( FILE )
@@ -175,7 +175,7 @@ function! Pastefile( FILE )
         return ""
 endfunction
 
-nmap <buffer> ,k :read $HOME/.vim/snippets/template.cf<CR>kdd
+nnoremap <buffer> ,k :read $HOME/.vim/snippets/template.cf<CR>kdd
 
 " TODO
 " Indents
