@@ -176,6 +176,7 @@ function! Pastefile( FILE )
 endfunction
 
 nmap <buffer> ,k :read $HOME/.vim/snippets/template.cf<CR>kdd
+nmap <buffer> ,s :read $HOME/.vim/snippets/stdlib.cf<CR>kdd
 
 " TODO
 " Indents
