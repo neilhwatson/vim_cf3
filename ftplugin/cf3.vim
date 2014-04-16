@@ -121,7 +121,7 @@ if !exists("*CF3AlignAssignments")
 function CF3AlignAssignments (AOP)
     "Patterns needed to locate assignment operators...
     if a:AOP == 'vars'
-       let ASSIGN_OP   = '\(string\|int\|real\|slist\|ilist\|rlist\|expression\|and\|or\|not\|volume\)*\s\+=>'
+       let ASSIGN_OP   = '\(string\|int\|real\|data\|slist\|ilist\|rlist\|expression\|and\|or\|not\|volume\)*\s\+=>'
     else
        let ASSIGN_OP   = '=>'
     endif

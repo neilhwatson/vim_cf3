@@ -72,7 +72,7 @@ syn region  cf3Var          start=/[$@][{(]/ end=/[})]/ contains=cf3Var,cf3Array
 syn region  cf3String       start=/\z\("\|'\)/ skip=/\\\z1/ end=/\z1/ contains=cf3Var,cf3Esc,cf3Array
 syn region  cf3Fold 	    start="{" end="}" transparent fold
 
-syn keyword cf3Type			string int real slist ilist rlist
+syn keyword cf3Type			string int real slist ilist rlist data
 
 " The following list may be automatically generated using
 " tools/extract_cf3BuiltIns.sh 
