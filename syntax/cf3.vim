@@ -181,7 +181,7 @@ syn keyword cf3FilesAttr	acl changes copy_from create delete depth_search contai
 syn keyword cf3FilesAttr	edit_defaults edit_line edit_template edit_xml file_select contained
 syn keyword cf3FilesAttr	link_from move_obstructions pathtype perms contained
 syn keyword cf3FilesAttr	rename repository touch transformer contained
-syn keyword cf3AccessAttr	admit deny maproot contained
+syn keyword cf3AccessAttr	admit_ips admit_hostnames admit_keys admit deny deny_ips deny_hostnames deny_keys maproot contained
 syn keyword cf3AccessAttr	ifencrypted resource_type contained
 syn keyword cf3MeasurementsAttr	stream_type data_type history_type contained
 syn keyword cf3MeasurementsAttr	units match_value contained
