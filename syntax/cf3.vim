@@ -285,7 +285,7 @@ syn keyword cf3BodyAgentControlAttr	repchar refresh_processes default_repository
 syn keyword cf3BodyAgentControlAttr	secureinput sensiblecount sensiblesize contained
 syn keyword cf3BodyAgentControlAttr	skipidentify suspiciousnames syslog verbose contained
 syn keyword cf3BodyAgentControlAttr	track_value timezone default_timeout contained
-syn keyword cf3BodyExecutorControlAttr splaytime mailfrom mailto smtpserver contained
+syn keyword cf3BodyExecutorControlAttr splaytime mailfrom mailsubject mailto smtpserver contained
 syn keyword cf3BodyExecutorControlAttr mailmaxlines schedule executorfacility contained
 syn keyword cf3BodyExecutorControlAttr exec_command contained
 syn keyword cf3BodyEditDefsAttr		edit_backup empty_file_before_editing contained
