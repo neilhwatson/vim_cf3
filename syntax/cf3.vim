@@ -158,7 +158,7 @@ syn keyword cf3ControlAttr	bundlesequence goal_categories contained
 syn keyword cf3ControlAttr	ignore_missing_bundles ignore_missing_inputs inputs contained
 syn keyword cf3ControlAttr	version lastseenexpireafter output_prefix domain contained
 syn keyword cf3ControlAttr	require_comments host_licenses_paid site_classes contained
-syn keyword cf3ControlAttr	syslog_host syslog_port fips_mode contained
+syn keyword cf3ControlAttr	syslog_host syslog_port fips_mode protocol_version contained
 syn keyword cf3MethodAttr	usebundle useresult inherit contained
 syn keyword cf3CommonAttr	action classes ifvarclass handle depends_on comment policy contained
 syn keyword cf3ClassesAttr	or and xor dist expression not select_class contained
@@ -247,8 +247,8 @@ syn keyword cf3BodyCopyFromAttr	source servers collapse_destination_dir containe
 syn keyword cf3BodyCopyFromAttr	compare copy_backup encrypt check_root contained
 syn keyword cf3BodyCopyFromAttr	copylink_patterns copy_size findertype contained
 syn keyword cf3BodyCopyFromAttr	linkcopy_patterns link_type force_update contained
-syn keyword cf3BodyCopyFromAttr	force_ipv4 portnumber preserve purge stealth contained
-syn keyword cf3BodyCopyFromAttr	timeout trustkey type_check verify contained
+syn keyword cf3BodyCopyFromAttr	force_ipv4 portnumber preserve protocol_version purge contained
+syn keyword cf3BodyCopyFromAttr	stealth timeout trustkey type_check verify contained
 syn keyword cf3BodyVolumeAttr	check_foreign freespace sensible_size contained
 syn keyword cf3BodyVolumeAttr	sensible_count scan_arrivals contained
 syn keyword cf3BodyMountAttr	edit_fstab mount_type mount_source contained
