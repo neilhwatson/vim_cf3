@@ -211,7 +211,7 @@ syn keyword cf3BodyFileSelectAttr 	exec_regex exec_program file_types issymlinkt
 syn keyword cf3BodyClassesAttr 	promise_repaired repair_failed repair_denied contained
 syn keyword cf3BodyClassesAttr 	repair_timeout promise_kept cancel_kept cancel_repaired contained
 syn keyword cf3BodyClassesAttr 	cancel_notkept kept_returncodes repaired_returncodes contained
-syn keyword cf3BodyClassesAttr 	failed_returncodes persist_time timer_policy contained
+syn keyword cf3BodyClassesAttr 	failed_returncodes persist_time scope timer_policy contained
 syn keyword cf3BodyLinkFromAttr	copy_patterns link_children link_type source contained
 syn keyword cf3BodyLinkFromAttr	when_linking_children when_no_source contained
 syn keyword cf3BodyPermsAttr	bsdflags groups mode owners rxdirs contained
