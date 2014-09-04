@@ -154,7 +154,7 @@ syn keyword cf3Stdlib	yum yum_group yum_rpm yum_rpm_enable_repo zypper contained
 "syn	match	cf3Function		/\w\+[,;(\>]/ contains=cf3BuiltIns,cf3Stdlib
 syn	match	cf3Function		/\<\w\+[,;()]/ contains=cf3BuiltIns,cf3Stdlib,cf3Evolve_freelib 
 
-syn keyword cf3ControlAttr	bundlesequence goal_categories contained
+syn keyword cf3ControlAttr	bundlesequence cache_system_functions goal_categories contained
 syn keyword cf3ControlAttr	ignore_missing_bundles ignore_missing_inputs inputs contained
 syn keyword cf3ControlAttr	version lastseenexpireafter output_prefix domain contained
 syn keyword cf3ControlAttr	require_comments host_licenses_paid site_classes contained
