@@ -34,7 +34,7 @@ syn match   cf3Bundle /^\s*bundle\s\+/ nextgroup=Cf3BundleTypes skipwhite
 
 syn keyword cf3BodyTypes action classes contain acl changes contained nextgroup=cf3BundleName skipwhite
 syn keyword cf3BodyTypes copy_from delete depth_search contained nextgroup=cf3BundleName skipwhite
-syn keyword cf3BodyTypes edit_defaults file_select contained nextgroup=cf3BundleName skipwhite
+syn keyword cf3BodyTypes edit_defaults file_select password contained nextgroup=cf3BundleName skipwhite
 syn keyword cf3BodyTypes link_from perms rename tcp_ip contained nextgroup=cf3BundleName skipwhite
 syn keyword cf3BodyTypes package_method process_count contained nextgroup=cf3BundleName skipwhite 
 syn keyword cf3BodyTypes process_select service_method contained nextgroup=cf3BundleName skipwhite
