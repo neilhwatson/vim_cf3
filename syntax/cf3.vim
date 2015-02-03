@@ -49,7 +49,7 @@ syn match   cf3BodyControl /^\s*body\s\+\(monitor\|runagent\)\s\+control/
 syn match   cf3BodyControl /^\s*body\s\+\(executor\|knowledge\|hub\)\s\+control/  
 syn match   cf3BodyControl /^\s*body\s\+\(reporter\|file\)\s\+control/  
 
-syn match cf3Action /\<\(vars\|classes\|reports\|meta\):/
+syn match cf3Action /\<\(vars\|classes\|reports\|meta\|users\):/
 syn match cf3Action /\<\(commands\|databases\|files\|interfaces\|methods\|packages\|storage\):/
 syn match cf3Action /\<\(access\|measurements\|roles\|topics\|occurrences\|defaults\):/
 syn match cf3Action /\<\(control\|guest_environments\|outputs\|processes\|services\|things\):/
