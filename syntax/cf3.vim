@@ -34,7 +34,7 @@ syn match   cf3Bundle /^\s*bundle\s\+/ nextgroup=Cf3BundleTypes skipwhite
 
 syn keyword cf3BodyTypes action classes contain acl changes contained nextgroup=cf3BundleName skipwhite
 syn keyword cf3BodyTypes copy_from delete depth_search contained nextgroup=cf3BundleName skipwhite
-syn keyword cf3BodyTypes edit_defaults file_select contained nextgroup=cf3BundleName skipwhite
+syn keyword cf3BodyTypes edit_defaults file_select password contained nextgroup=cf3BundleName skipwhite
 syn keyword cf3BodyTypes link_from perms rename tcp_ip contained nextgroup=cf3BundleName skipwhite
 syn keyword cf3BodyTypes package_method process_count contained nextgroup=cf3BundleName skipwhite 
 syn keyword cf3BodyTypes process_select service_method contained nextgroup=cf3BundleName skipwhite
@@ -49,7 +49,7 @@ syn match   cf3BodyControl /^\s*body\s\+\(monitor\|runagent\)\s\+control/
 syn match   cf3BodyControl /^\s*body\s\+\(executor\|knowledge\|hub\)\s\+control/  
 syn match   cf3BodyControl /^\s*body\s\+\(reporter\|file\)\s\+control/  
 
-syn match cf3Action /\<\(vars\|classes\|reports\|meta\):/
+syn match cf3Action /\<\(vars\|classes\|reports\|meta\|users\):/
 syn match cf3Action /\<\(commands\|databases\|files\|interfaces\|methods\|packages\|storage\):/
 syn match cf3Action /\<\(access\|measurements\|roles\|topics\|occurrences\|defaults\):/
 syn match cf3Action /\<\(control\|guest_environments\|outputs\|processes\|services\|things\):/
@@ -69,7 +69,7 @@ syn match   cf3Esc          /\\\\[sSdD+][\+\*]*/ contained
 syn region  cf3Array        start=/\(\\\)\@<!\[/ end=/\]/ contained contains=cf3Var
 " Variables wrapped in {} or ()
 syn region  cf3Var          start=/[$@][{(]/ end=/[})]/ contains=cf3Var,cf3Array
-syn region  cf3String       start=/\z\("\|'\)/ skip=/\\\z1/ end=/\z1/ contains=cf3Var,cf3Esc,cf3Array
+syn region  cf3String       start=/\z\("\|'\)/ skip=/\(\\\)\@<!\(\\\\\)*\\\z1/ end=/\z1/ contains=cf3Var,cf3Esc,cf3Array
 syn region  cf3Fold 	    start="{" end="}" transparent fold
 
 syn keyword cf3Type			string int real slist ilist rlist data
