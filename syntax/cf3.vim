@@ -94,7 +94,7 @@ syn keyword cf3BuiltIns	maparray maplist mergecontainer none not now contained
 syn keyword cf3BuiltIns	nth on or parseintrealstringarray parsejson parsestringarrayidx contained
 syn keyword cf3BuiltIns	peerleader peerleaders peers product randomint readfile contained
 syn keyword cf3BuiltIns	readintrealstringarray readintrealstringlist readjson readstringarrayidx readtcp regarray contained
-syn keyword cf3BuiltIns	data_readstringarrayidx data_readstringarray contained
+syn keyword cf3BuiltIns	data_readstringarrayidx data_readstringarray data_expand contained
 syn keyword cf3BuiltIns	regcmp regextract registryvalue regldap regline reglist contained
 syn keyword cf3BuiltIns	remoteclassesmatching remotescalar returnszero reverse rrange selectservers contained
 syn keyword cf3BuiltIns	shuffle some sort splayclass splitstring strcmp contained
