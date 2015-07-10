@@ -91,13 +91,14 @@ syn keyword cf3BuiltIns	iprange irange isdir isexecutable isgreaterthan islessth
 syn keyword cf3BuiltIns	islink isnewerthan isplain isvariable join lastnode contained
 syn keyword cf3BuiltIns	laterthan ldaparray ldaplist ldapvalue length lsdir contained
 syn keyword cf3BuiltIns	maparray maplist mergecontainer none not now contained
-syn keyword cf3BuiltIns	nth on or parseintrealstringarray parsejson parsestringarrayidx contained
+syn keyword cf3BuiltIns	nth on or parseintrealstringarray parsejson parseyaml parsestringarrayidx contained
 syn keyword cf3BuiltIns	peerleader peerleaders peers product randomint readfile contained
-syn keyword cf3BuiltIns	readintrealstringarray readintrealstringlist readjson readstringarrayidx readtcp regarray contained
+syn keyword cf3BuiltIns	readintrealstringarray readintrealstringlist readjson contained
+syn keyword cf3BuiltIns	readyaml readstringarrayidx readtcp regarray contained
 syn keyword cf3BuiltIns	data_readstringarrayidx data_readstringarray data_expand contained
 syn keyword cf3BuiltIns	regcmp regextract registryvalue regldap regline reglist contained
 syn keyword cf3BuiltIns	remoteclassesmatching remotescalar returnszero reverse rrange selectservers contained
-syn keyword cf3BuiltIns	shuffle some sort splayclass splitstring strcmp contained
+syn keyword cf3BuiltIns	shuffle some sort splayclass splitstring strcmp storejson storeyaml contained
 syn keyword cf3BuiltIns	strftime sublist sum translatepath unique usemodule contained
 syn keyword cf3BuiltIns	userexists contained
 
