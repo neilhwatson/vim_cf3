@@ -162,7 +162,7 @@ syn keyword cf3ControlAttr	version lastseenexpireafter output_prefix domain cont
 syn keyword cf3ControlAttr	require_comments host_licenses_paid site_classes contained
 syn keyword cf3ControlAttr	syslog_host syslog_port fips_mode protocol_version contained
 syn keyword cf3MethodAttr	usebundle useresult inherit contained
-syn keyword cf3CommonAttr	action classes ifvarclass handle depends_on comment policy contained
+syn keyword cf3CommonAttr	action classes if unless ifvarclass handle depends_on comment policy contained
 syn keyword cf3ClassesAttr	and dist expression not or persistence scope select_class xor contained
 syn keyword cf3CommandsAttr args contain module contained
 syn keyword cf3ProcessesAttr process_count process_select contained
