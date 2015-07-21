@@ -36,7 +36,7 @@ syn keyword cf3BodyTypes action classes contain acl changes contained nextgroup=
 syn keyword cf3BodyTypes copy_from delete depth_search contained nextgroup=cf3BundleName skipwhite
 syn keyword cf3BodyTypes edit_defaults file_select password contained nextgroup=cf3BundleName skipwhite
 syn keyword cf3BodyTypes link_from perms rename tcp_ip contained nextgroup=cf3BundleName skipwhite
-syn keyword cf3BodyTypes package_method process_count contained nextgroup=cf3BundleName skipwhite 
+syn keyword cf3BodyTypes package_method process_count package_module contained nextgroup=cf3BundleName skipwhite 
 syn keyword cf3BodyTypes process_select service_method contained nextgroup=cf3BundleName skipwhite
 syn keyword cf3BodyTypes mount volume printfile match_value contained nextgroup=cf3BundleName skipwhite
 syn keyword cf3BodyTypes association select_region delete_select contained nextgroup=cf3BundleName skipwhite
@@ -161,6 +161,7 @@ syn keyword cf3ControlAttr	ignore_missing_bundles ignore_missing_inputs inputs c
 syn keyword cf3ControlAttr	version lastseenexpireafter output_prefix domain contained
 syn keyword cf3ControlAttr	require_comments host_licenses_paid site_classes contained
 syn keyword cf3ControlAttr	syslog_host syslog_port fips_mode protocol_version contained
+syn keyword cf3ControlAttr	package_module contained
 syn keyword cf3MethodAttr	usebundle useresult inherit contained
 syn keyword cf3CommonAttr	action classes if unless ifvarclass handle depends_on comment policy contained
 syn keyword cf3ClassesAttr	and dist expression not or persistence scope select_class xor contained
@@ -168,7 +169,7 @@ syn keyword cf3CommandsAttr args contain module contained
 syn keyword cf3ProcessesAttr process_count process_select contained
 syn keyword cf3ProcessesAttr process_stop restart_class signals contained
 syn keyword cf3PackagesAttr	package_architectures package_method package_policy contained
-syn keyword cf3PackagesAttr	package_select package_version contained
+syn keyword cf3PackagesAttr	package_select package_version package_module contained
 syn keyword cf3GuestEnvAttr	environment_host environment_interface contained
 syn keyword cf3GuestEnvAttr	environment_resources environment_state contained
 syn keyword cf3GuestEnvAttr	environment_type contained
@@ -223,6 +224,8 @@ syn keyword cf3BodyDepthSearchAttr	rmdeadlinks traverse_links xdev contained
 syn keyword cf3BodyDeleteAttr	dirlinks rmdirs contained
 syn keyword cf3BodyRenameAttr	disable disable_mode disable_suffix newname rotate contained
 syn keyword cf3BodyChangesAttr	hash report_changes update_hashes report_diffs contained
+syn keyword cf3BodyPackageModuleAttr	default_options query_installed_ifelapsed contained
+syn keyword cf3BodyPackageModuleAttr	query_updates_ifelapsed contained
 syn keyword cf3BodyPackageMethodAttr	package_add_command package_arch_regex contained
 syn keyword cf3BodyPackageMethodAttr	package_changes package_delete_command contained
 syn keyword cf3BodyPackageMethodAttr	package_delete_convention package_file_repositories contained
@@ -321,6 +324,7 @@ syn cluster cf3AttrCluster	add=cf3ServicesAttr,cf3DatabasesAttr,cf3DefaultsAttr
 syn cluster cf3AttrCluster	add=cf3BodyLinkFromAttr,cf3BodyPermsAttr,cf3BodyACLAttr
 syn cluster cf3AttrCluster	add=cf3BodyDepthSearchAttr,cf3BodyDeleteAttr,cf3BodyRenameAttr
 syn cluster cf3AttrCluster	add=cf3BodyChangesAttr,cf3BodyPackageMethodAttr,cf3BodyActionAttr
+syn cluster cf3AttrCluster	add=cf3BodyPackageModuleAttr
 syn cluster cf3AttrCluster	add=cf3BodyContainAttr,cf3BodyCopyFromAttr,cf3BodyVolumeAttr
 syn cluster cf3AttrCluster	add=cf3BodyMountAttr,cf3BodyServiceMethodAttr,cf3BodyDatabaseServerAttr
 syn cluster cf3AttrCluster	add=cf3BodyEnvResourcesAttr,cf3BodyMatchValueAttr,cf3BodyServiceMethodAttr
@@ -409,6 +413,7 @@ if version >= 508 || !exists("did_cfg_syn_inits")
 	HiLink cf3BodyRenameAttr	Statement
 	HiLink cf3BodyChangesAttr	Statement
 	HiLink cf3BodyPackageMethodAttr	Statement
+	HiLink cf3BodyPackageModuleAttr	Statement
 	HiLink cf3BodyActionAttr	Statement
 	HiLink cf3BodyContainAttr	Statement
 	HiLink cf3BodyCopyFromAttr	Statement
