@@ -48,7 +48,6 @@ function! EnableCFE3KeywordAbbreviations()
     iab <buffer> sysw ${sys.workdir}
     iab <buffer> ub usebundle =>
     iab <buffer> var vars:
-    echo "CFEngine 3 Keyword Abbreviations enabled"
 endfunction
 
 function! DisableCFE3KeywordAbbreviations()
@@ -72,7 +71,6 @@ function! DisableCFE3KeywordAbbreviations()
      iunab <buffer> sysw
      iunab <buffer> ub
      iunab <buffer> var
-    echo "CFEngine 3 Keyword Abbreviations disabled"
 endfunction
 
 " Default abbreviations off
