@@ -50,7 +50,6 @@ function! EnableCFE3KeywordAbbreviations()
     iab <buffer> sysw ${sys.workdir}
     iab <buffer> ub usebundle =>
     iab <buffer> var vars:
-    echo "CFEngine 3 Keyword Abbreviations enabled"
 endfunction
 
 function! DisableCFE3KeywordAbbreviations()
@@ -74,7 +73,6 @@ function! DisableCFE3KeywordAbbreviations()
      iunab <buffer> sysw
      iunab <buffer> ub
      iunab <buffer> var
-    echo "CFEngine 3 Keyword Abbreviations disabled"
 endfunction
 
 " Default abbreviations off
@@ -123,7 +121,7 @@ if !exists("*CF3AlignAssignments")
 function CF3AlignAssignments (AOP)
     "Patterns needed to locate assignment operators...
     if a:AOP == 'vars'
-       let ASSIGN_OP   = '\(string\|int\|real\|slist\|ilist\|rlist\|expression\|and\|or\|not\|volume\)*\s\+=>'
+       let ASSIGN_OP   = '\(string\|int\|real\|data\|slist\|ilist\|rlist\|expression\|and\|or\|not\|volume\)*\s\+=>'
     else
        let ASSIGN_OP   = '=>'
     endif
@@ -178,6 +176,7 @@ function! Pastefile( FILE )
 endfunction
 
 nnoremap <buffer> ,k :call Pastefile("template.cf")<CR>kdd
+nnoremap <buffer> ,s :call Pastefile("stdlib.cf")<CR>kdd
 
 " TODO
 " Indents
