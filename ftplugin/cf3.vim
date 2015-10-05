@@ -21,6 +21,8 @@ if exists("b:loaded_CFE3Ftplugin")
 endif
 let b:loaded_CFE3Ftplugin = 1
 
+let s:install_dir = expand('<sfile>:p:h:h')
+
 " =============== Keyword Abbreviations  ===============
 " enable keyword abbreviations with by adding 
 " "let g:EnableCFE3KeywordAbbreviations=1" to your vimrc
@@ -167,14 +169,14 @@ nnoremap <buffer> <silent>  <ESC>=  :call CF3AlignAssignments("vars")<CR>
 
 " For pasting code snippets
 function! Pastefile( FILE )
-        let arg_file = $HOME."/.vim/snippets/".a:FILE
+        let arg_file = s:install_dir."/snippets/".a:FILE
         let @" = join( readfile( arg_file ), "\n" )
         put 
         return ""
 endfunction
 
-nnoremap <buffer> ,k :read $HOME/.vim/snippets/template.cf<CR>kdd
-nnoremap <buffer> ,s :read $HOME/.vim/snippets/stdlib.cf<CR>kdd
+nnoremap <buffer> ,k :call Pastefile("template.cf")<CR>kdd
+nnoremap <buffer> ,s :call Pastefile("stdlib.cf")<CR>kdd
 
 " TODO
 " Indents
