@@ -77,30 +77,34 @@ syn keyword cf3Type			string int real slist ilist rlist data
 " The following list may be automatically generated using
 " tools/extract_cf3BuiltIns.sh 
 
-" Last update: 2013/10/10 - git tag e40c31e901ff2396d25658af578873353ad06499
+" Last update: 2015/10/04 - git tag e0392e5c7f0087fa3b0df36ca3b83f4136924ba9
 
-syn keyword cf3BuiltIns	 accessedbefore accumulated ago and canonify contained
-syn keyword cf3BuiltIns	canonifyuniquely changedbefore classesmatching classify classmatch concat contained
-syn keyword cf3BuiltIns	countclassesmatching countlinesmatching difference dirname diskfree escape contained
-syn keyword cf3BuiltIns	eval every execresult fileexists filesexist filesize contained
-syn keyword cf3BuiltIns	filestat filter findfiles format getenv getfields contained
-syn keyword cf3BuiltIns	getgid getindices getuid getusers getvalues grep contained
-syn keyword cf3BuiltIns	groupexists hash hashmatch host2ip hostinnetgroup hostrange contained
-syn keyword cf3BuiltIns	hostsseen hostswithclass hubknowledge ifelse intersection ip2host contained
-syn keyword cf3BuiltIns	iprange irange isdir isexecutable isgreaterthan islessthan contained
-syn keyword cf3BuiltIns	islink isnewerthan isplain isvariable join lastnode contained
-syn keyword cf3BuiltIns	laterthan ldaparray ldaplist ldapvalue length lsdir contained
-syn keyword cf3BuiltIns	maparray maplist mergecontainer none not now contained
-syn keyword cf3BuiltIns	nth on or parseintrealstringarray parsejson parseyaml parsestringarrayidx contained
-syn keyword cf3BuiltIns	peerleader peerleaders peers product randomint readfile contained
-syn keyword cf3BuiltIns	readintrealstringarray readintrealstringlist readjson contained
-syn keyword cf3BuiltIns	readyaml readstringarrayidx readtcp regarray contained
-syn keyword cf3BuiltIns	data_readstringarrayidx data_readstringarray data_expand contained
-syn keyword cf3BuiltIns	regcmp regextract registryvalue regldap regline reglist contained
-syn keyword cf3BuiltIns	remoteclassesmatching remotescalar returnszero reverse rrange selectservers contained
-syn keyword cf3BuiltIns	shuffle some sort splayclass splitstring strcmp storejson storeyaml contained
-syn keyword cf3BuiltIns	strftime sublist sum translatepath unique usemodule contained
-syn keyword cf3BuiltIns	userexists contained
+syn keyword cf3BuiltIns	accessedbefore accumulated ago and bundlesmatching contained
+syn keyword cf3BuiltIns	bundlestate canonify canonifyuniquely changedbefore classesmatching classify contained
+syn keyword cf3BuiltIns	classmatch concat countclassesmatching countlinesmatching data_expand data_readstringarray contained
+syn keyword cf3BuiltIns	data_readstringarrayidx data_regextract datastate difference dirname diskfree contained
+syn keyword cf3BuiltIns	escape eval every execresult expandrange file_hash contained
+syn keyword cf3BuiltIns	fileexists filesexist filesize filestat filter findfiles contained
+syn keyword cf3BuiltIns	format getclassmetatags getenv getfields getgid getindices contained
+syn keyword cf3BuiltIns	getuid getusers getvalues getvariablemetatags grep groupexists contained
+syn keyword cf3BuiltIns	hash hashmatch host2ip hostinnetgroup hostrange hostsseen contained
+syn keyword cf3BuiltIns	hostswithclass hubknowledge ifelse intersection ip2host iprange contained
+syn keyword cf3BuiltIns	irange isdir isexecutable isgreaterthan islessthan islink contained
+syn keyword cf3BuiltIns	isnewerthan isplain isvariable join lastnode laterthan contained
+syn keyword cf3BuiltIns	ldaparray ldaplist ldapvalue length lsdir makerule contained
+syn keyword cf3BuiltIns	maparray mapdata maplist max mean mergedata contained
+syn keyword cf3BuiltIns	min none not now nth on contained
+syn keyword cf3BuiltIns	or packagesmatching packageupdatesmatching parseintarray parsejson parserealarray contained
+syn keyword cf3BuiltIns	parsestringarray parsestringarrayidx parseyaml peerleader peerleaders peers contained
+syn keyword cf3BuiltIns	product randomint readcsv readdata readfile readintarray contained
+syn keyword cf3BuiltIns	readintlist readjson readrealarray readreallist readstringarray readstringarrayidx contained
+syn keyword cf3BuiltIns	readstringlist readtcp readyaml regarray regcmp regextract contained
+syn keyword cf3BuiltIns	registryvalue regldap regline reglist remoteclassesmatching remotescalar contained
+syn keyword cf3BuiltIns	returnszero reverse rrange selectservers shuffle some contained
+syn keyword cf3BuiltIns	sort splayclass splitstring storejson strcmp strftime contained
+syn keyword cf3BuiltIns	string_downcase string_head string_length string_mustache string_reverse string_split contained
+syn keyword cf3BuiltIns	string_tail string_upcase sublist sum translatepath unique contained
+syn keyword cf3BuiltIns	usemodule userexists variablesmatching contained
 
 " The following list may be automatically generated using
 " tools/extract_cf3evolve_freelib.sh
