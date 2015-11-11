@@ -352,6 +352,7 @@ if version >= 508 || !exists("did_cfg_syn_inits")
 	hi cf3Type ctermfg=Magenta 
 	hi Identifier ctermfg=Blue 
 	hi Function ctermfg=DarkGreen
+	hi Library ctermfg=DarkGrey
 	hi cf3ClassBlock ctermfg=Yellow
 
     HiLink cf3Bundle        Statement
@@ -373,7 +374,7 @@ if version >= 508 || !exists("did_cfg_syn_inits")
 	HiLink cf3String        String
 	HiLink cf3BuiltIns		Function
    HiLink cf3Evolve_freelib Function
-	HiLink cf3Stdlib		Function
+	HiLink cf3Stdlib		Library
 
     HiLink cf3Identifier    cf3Arrows
     HiLink cf3Esc           Special
