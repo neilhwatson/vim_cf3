@@ -4,7 +4,7 @@
 " Last Change:  Jul 21 2012
 " Location:
 "
-" TODO: 
+" TODO:
 "	- would be great to know current promise type
 "
 " This is my first attempt at a syntax file.  Feel free to send me corrections
@@ -25,7 +25,7 @@ endif
 
 syn case ignore
 
-syn match	cf3BundleParams /(\w\+\(,\s*\w\+\)*)/hs=s+1,he=e-1 contained 
+syn match	cf3BundleParams /(\w\+\(,\s*\w\+\)*)/hs=s+1,he=e-1 contained
 syn match   cf3BundleName /\s\+\w\+\s*/ contained nextgroup=cf3BundleParams
 
 syn keyword cf3BundleTypes agent common server knowledge monitor edit_line contained nextgroup=cf3BundleName skipwhite
@@ -36,18 +36,18 @@ syn keyword cf3BodyTypes action classes contain acl changes contained nextgroup=
 syn keyword cf3BodyTypes copy_from delete depth_search contained nextgroup=cf3BundleName skipwhite
 syn keyword cf3BodyTypes edit_defaults file_select password contained nextgroup=cf3BundleName skipwhite
 syn keyword cf3BodyTypes link_from perms rename tcp_ip contained nextgroup=cf3BundleName skipwhite
-syn keyword cf3BodyTypes package_method process_count package_module contained nextgroup=cf3BundleName skipwhite 
+syn keyword cf3BodyTypes package_method process_count package_module contained nextgroup=cf3BundleName skipwhite
 syn keyword cf3BodyTypes process_select service_method contained nextgroup=cf3BundleName skipwhite
 syn keyword cf3BodyTypes mount volume printfile match_value contained nextgroup=cf3BundleName skipwhite
 syn keyword cf3BodyTypes association select_region delete_select contained nextgroup=cf3BundleName skipwhite
 syn keyword cf3BodyTypes insert_select location edit_field replace_with contained nextgroup=cf3BundleName skipwhite
 syn keyword cf3BodyTypes common database_server environment_resources contained nextgroup=cf3BundleName skipwhite
-syn match   cf3Body /^\s*body\s\+/ nextgroup=Cf3BodyTypes skipwhite 
+syn match   cf3Body /^\s*body\s\+/ nextgroup=Cf3BodyTypes skipwhite
 
-syn match   cf3BodyControl /^\s*body\s\+\(common\|agent\|server\)\s\+control/  
-syn match   cf3BodyControl /^\s*body\s\+\(monitor\|runagent\)\s\+control/  
-syn match   cf3BodyControl /^\s*body\s\+\(executor\|knowledge\|hub\)\s\+control/  
-syn match   cf3BodyControl /^\s*body\s\+\(reporter\|file\)\s\+control/  
+syn match   cf3BodyControl /^\s*body\s\+\(common\|agent\|server\)\s\+control/
+syn match   cf3BodyControl /^\s*body\s\+\(monitor\|runagent\)\s\+control/
+syn match   cf3BodyControl /^\s*body\s\+\(executor\|knowledge\|hub\)\s\+control/
+syn match   cf3BodyControl /^\s*body\s\+\(reporter\|file\)\s\+control/
 
 syn match cf3Action /\<\(vars\|classes\|reports\|meta\|users\):/
 syn match cf3Action /\<\(commands\|databases\|files\|interfaces\|methods\|packages\|storage\):/
@@ -75,7 +75,7 @@ syn region  cf3Fold 	    start="{" end="}" transparent fold
 syn keyword cf3Type			string int real slist ilist rlist data
 
 " The following list may be automatically generated using
-" tools/extract_cf3BuiltIns.sh 
+" tools/extract_cf3BuiltIns.sh
 
 " Last update: 2015/10/04 - git tag e0392e5c7f0087fa3b0df36ca3b83f4136924ba9
 
@@ -158,7 +158,7 @@ syn keyword cf3Stdlib	uncomment_lines_matching unmount value warn_lines_matching
 syn keyword cf3Stdlib	yum yum_group yum_rpm yum_rpm_enable_repo zypper contained
 
 "syn	match	cf3Function		/\w\+[,;(\>]/ contains=cf3BuiltIns,cf3Stdlib
-syn	match	cf3Function		/\<\w\+[,;()]/ contains=cf3BuiltIns,cf3Stdlib,cf3Evolve_freelib 
+syn	match	cf3Function		/\<\w\+[,;()]/ contains=cf3BuiltIns,cf3Stdlib,cf3Evolve_freelib
 
 syn keyword cf3ControlAttr	bundlesequence cache_system_functions goal_categories contained
 syn keyword cf3ControlAttr	ignore_missing_bundles ignore_missing_inputs inputs contained
@@ -197,7 +197,7 @@ syn keyword cf3ReportsAttr	printfile report_to_file showstate contained
 syn keyword cf3ReportsAttr	bundle_return_value_index contained
 
 " Bodies
-syn keyword cf3EditLineAttr	replace_with edit_field whitespace_policy location contained 
+syn keyword cf3EditLineAttr	replace_with edit_field whitespace_policy location contained
 syn keyword cf3EditLineAttr	insert_select insert_type expand_scalars not_matching contained
 syn keyword cf3EditLineAttr	delete_select select_region contained
 syn keyword cf3EditFieldAttr	allow_blank_fields extend_fields field_operation contained
@@ -346,11 +346,11 @@ if version >= 508 || !exists("did_cfg_syn_inits")
     else
         command -nargs=+ HiLink hi def link <args>
     endif
-    
-	hi cf3Context ctermfg=DarkGreen 
-	hi cf3Arrows ctermfg=DarkCyan 
-	hi cf3Type ctermfg=Magenta 
-	hi Identifier ctermfg=Blue 
+
+	hi cf3Context ctermfg=DarkGreen
+	hi cf3Arrows ctermfg=DarkCyan
+	hi cf3Type ctermfg=Magenta
+	hi Identifier ctermfg=Blue
 	hi Function ctermfg=DarkGreen
 	hi Library ctermfg=DarkGrey
 	hi cf3ClassBlock ctermfg=Yellow
@@ -359,15 +359,15 @@ if version >= 508 || !exists("did_cfg_syn_inits")
     HiLink cf3BundleTypes   Statement
     HiLink cf3BundleName	Function
     HiLink cf3BundleParams	Identifier
-    
+
 	HiLink cf3Body			Statement
 	HiLink cf3BodyTypes		Statement
     HiLink cf3Comment	    Comment
-	
+
 	HiLink cf3BodyControl	Statement
 	HiLink cf3BodyControlTypes	Statement
 	HiLink cf3BodyControlName	Statement
-    
+
     HiLink cf3Action	   Underlined
     HiLink cf3Class         cf3Context
 
@@ -454,15 +454,15 @@ set foldmethod=syntax
 "
 " vim_cf3 files (https://github.com/neilhwatson/vim_cf3)
 " Copyright (C) 2011 Neil H. Watson <neil@watson-wilson.ca>
-" 
+"
 " This program is free software: you can redistribute it and/or modify it under
 " the terms of the GNU General Public License as published by the Free Software
 " Foundation, either version 3 of the License, or (at your option) any later
 " version.
-" 
+"
 " This program is distributed in the hope that it will be useful, but WITHOUT ANY
 " WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
 " PARTICULAR PURPOSE.  See the GNU General Public License for more details.
-" 
+"
 " You should have received a copy of the GNU General Public License along with
 " this program.  If not, see <http://www.gnu.org/licenses/>.
