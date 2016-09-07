@@ -499,6 +499,10 @@ function! CF3Folds()
   endfor
   " }}}
 
+  " TODO:
+  " - fold lists
+  " - include trailing }'s in fdl 1
+
   " If nothing matches, keep the previous foldlevel
   return '='
 
