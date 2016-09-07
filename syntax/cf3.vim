@@ -1,3 +1,5 @@
+" vim:foldmethod=marker
+
 " Vim syntax file
 " Language:     Cfengine version 3
 " Maintainer:   Neil Watson <neil@watson-wilson.ca>
@@ -17,7 +19,8 @@
 "
 " For version 5.x: Clear all syntax items
 " For version 6.x: Quit when a syntax file was already loaded
-if version < 600
+
+if version < 600 " {{{
     syntax clear
 elseif exists ("b:current_syntax")
     finish
@@ -338,8 +341,9 @@ syn cluster cf3AttrCluster	add=cf3BodyDeleteSelectAttr,cf3BodyInsertSelectAttr
 syn cluster cf3AttrCluster	add=cf3BodyMonitorControlAttr,cf3BodyPrintfileAttr
 syn match	cf3Attributes	/\w\+\s*=>/ contains=@cf3AttrCluster
 
+" }}}
 
-if version >= 508 || !exists("did_cfg_syn_inits")
+if version >= 508 || !exists("did_cfg_syn_inits") " {{{
     if version < 508
         let did_cfg_syn_inits = 1
         command -nargs=+ HiLink hi link <args>
@@ -442,6 +446,8 @@ if version >= 508 || !exists("did_cfg_syn_inits")
     delcommand HiLink
 endif
 let b:current_syntax = "cf3"
+
+" }}}
 
 set foldmethod=syntax
 
