@@ -451,6 +451,7 @@ set foldmethod=syntax
 " John Coleman of Yale U
 " Matt Lesko
 " Ivan Pesin
+" Zach Himsel
 "
 " vim_cf3 files (https://github.com/neilhwatson/vim_cf3)
 " Copyright (C) 2011 Neil H. Watson <neil@watson-wilson.ca>
