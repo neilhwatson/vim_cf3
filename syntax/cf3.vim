@@ -461,6 +461,12 @@ function! CF3Folds()
   endif
   " }}}
 
+  " Don't include comments in the previous fold {{{
+  if line =~? '\v^\s*#.*$'
+    return '-1'
+  endif
+  " }}}
+
   " Fold bodies/bundles {{{
   let body_types = [
         \"^bundle",
