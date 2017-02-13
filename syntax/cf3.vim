@@ -1,10 +1,12 @@
+" vim:foldmethod=marker
+
 " Vim syntax file
 " Language:     Cfengine version 3
 " Maintainer:   Neil Watson <neil@watson-wilson.ca>
 " Last Change:  Jul 21 2012
 " Location:
 "
-" TODO: 
+" TODO:
 "	- would be great to know current promise type
 "
 " This is my first attempt at a syntax file.  Feel free to send me corrections
@@ -17,7 +19,8 @@
 "
 " For version 5.x: Clear all syntax items
 " For version 6.x: Quit when a syntax file was already loaded
-if version < 600
+
+if version < 600 " {{{
     syntax clear
 elseif exists ("b:current_syntax")
     finish
@@ -25,7 +28,7 @@ endif
 
 syn case ignore
 
-syn match	cf3BundleParams /(\w\+\(,\s*\w\+\)*)/hs=s+1,he=e-1 contained 
+syn match	cf3BundleParams /(\w\+\(,\s*\w\+\)*)/hs=s+1,he=e-1 contained
 syn match   cf3BundleName /\s\+\w\+\s*/ contained nextgroup=cf3BundleParams
 
 syn keyword cf3BundleTypes agent common server knowledge monitor edit_line contained nextgroup=cf3BundleName skipwhite
@@ -36,18 +39,18 @@ syn keyword cf3BodyTypes action classes contain acl changes contained nextgroup=
 syn keyword cf3BodyTypes copy_from delete depth_search contained nextgroup=cf3BundleName skipwhite
 syn keyword cf3BodyTypes edit_defaults file_select password contained nextgroup=cf3BundleName skipwhite
 syn keyword cf3BodyTypes link_from perms rename tcp_ip contained nextgroup=cf3BundleName skipwhite
-syn keyword cf3BodyTypes package_method process_count package_module contained nextgroup=cf3BundleName skipwhite 
+syn keyword cf3BodyTypes package_method process_count package_module contained nextgroup=cf3BundleName skipwhite
 syn keyword cf3BodyTypes process_select service_method contained nextgroup=cf3BundleName skipwhite
 syn keyword cf3BodyTypes mount volume printfile match_value contained nextgroup=cf3BundleName skipwhite
 syn keyword cf3BodyTypes association select_region delete_select contained nextgroup=cf3BundleName skipwhite
 syn keyword cf3BodyTypes insert_select location edit_field replace_with contained nextgroup=cf3BundleName skipwhite
 syn keyword cf3BodyTypes common database_server environment_resources contained nextgroup=cf3BundleName skipwhite
-syn match   cf3Body /^\s*body\s\+/ nextgroup=Cf3BodyTypes skipwhite 
+syn match   cf3Body /^\s*body\s\+/ nextgroup=Cf3BodyTypes skipwhite
 
-syn match   cf3BodyControl /^\s*body\s\+\(common\|agent\|server\)\s\+control/  
-syn match   cf3BodyControl /^\s*body\s\+\(monitor\|runagent\)\s\+control/  
-syn match   cf3BodyControl /^\s*body\s\+\(executor\|knowledge\|hub\)\s\+control/  
-syn match   cf3BodyControl /^\s*body\s\+\(reporter\|file\)\s\+control/  
+syn match   cf3BodyControl /^\s*body\s\+\(common\|agent\|server\)\s\+control/
+syn match   cf3BodyControl /^\s*body\s\+\(monitor\|runagent\)\s\+control/
+syn match   cf3BodyControl /^\s*body\s\+\(executor\|knowledge\|hub\)\s\+control/
+syn match   cf3BodyControl /^\s*body\s\+\(reporter\|file\)\s\+control/
 
 syn match cf3Action /\<\(vars\|classes\|reports\|meta\|users\):/
 syn match cf3Action /\<\(commands\|databases\|files\|interfaces\|methods\|packages\|storage\):/
@@ -70,7 +73,6 @@ syn region  cf3Array        start=/\(\\\)\@<!\[/ end=/\]/ contained contains=cf3
 " Variables wrapped in {} or ()
 syn region  cf3Var          start=/[$@][{(]/ end=/[})]/ contains=cf3Var,cf3Array
 syn region  cf3String       start=/\z\("\|'\)/ skip=/\(\\\)\@<!\(\\\\\)*\\\z1/ end=/\z1/ contains=cf3Var,cf3Esc,cf3Array
-syn region  cf3Fold 	    start="{" end="}" transparent fold
 
 syn keyword cf3Type			string int real slist ilist rlist data
 
@@ -160,7 +162,7 @@ syn keyword cf3Stdlib	uncomment_lines_matching unmount value warn_lines_matching
 syn keyword cf3Stdlib	yum yum_group yum_rpm yum_rpm_enable_repo zypper contained
 
 "syn	match	cf3Function		/\w\+[,;(\>]/ contains=cf3BuiltIns,cf3Stdlib
-syn	match	cf3Function		/\<\w\+[,;()]/ contains=cf3BuiltIns,cf3Stdlib,cf3Evolve_freelib 
+syn	match	cf3Function		/\<\w\+[,;()]/ contains=cf3BuiltIns,cf3Stdlib,cf3Evolve_freelib
 
 syn keyword cf3ControlAttr	bundlesequence cache_system_functions goal_categories contained
 syn keyword cf3ControlAttr	ignore_missing_bundles ignore_missing_inputs inputs contained
@@ -199,7 +201,7 @@ syn keyword cf3ReportsAttr	printfile report_to_file showstate contained
 syn keyword cf3ReportsAttr	bundle_return_value_index contained
 
 " Bodies
-syn keyword cf3EditLineAttr	replace_with edit_field whitespace_policy location contained 
+syn keyword cf3EditLineAttr	replace_with edit_field whitespace_policy location contained
 syn keyword cf3EditLineAttr	insert_select insert_type expand_scalars not_matching contained
 syn keyword cf3EditLineAttr	delete_select select_region contained
 syn keyword cf3EditFieldAttr	allow_blank_fields extend_fields field_operation contained
@@ -340,19 +342,20 @@ syn cluster cf3AttrCluster	add=cf3BodyDeleteSelectAttr,cf3BodyInsertSelectAttr
 syn cluster cf3AttrCluster	add=cf3BodyMonitorControlAttr,cf3BodyPrintfileAttr
 syn match	cf3Attributes	/\w\+\s*=>/ contains=@cf3AttrCluster
 
+" }}}
 
-if version >= 508 || !exists("did_cfg_syn_inits")
+if version >= 508 || !exists("did_cfg_syn_inits") " {{{
     if version < 508
         let did_cfg_syn_inits = 1
         command -nargs=+ HiLink hi link <args>
     else
         command -nargs=+ HiLink hi def link <args>
     endif
-    
-	hi cf3Context ctermfg=DarkGreen 
-	hi cf3Arrows ctermfg=DarkCyan 
-	hi cf3Type ctermfg=Magenta 
-	hi Identifier ctermfg=Blue 
+
+	hi cf3Context ctermfg=DarkGreen
+	hi cf3Arrows ctermfg=DarkCyan
+	hi cf3Type ctermfg=Magenta
+	hi Identifier ctermfg=Blue
 	hi Function ctermfg=DarkGreen
 	hi Library ctermfg=DarkGrey
 	hi cf3ClassBlock ctermfg=Yellow
@@ -361,15 +364,15 @@ if version >= 508 || !exists("did_cfg_syn_inits")
     HiLink cf3BundleTypes   Statement
     HiLink cf3BundleName	Function
     HiLink cf3BundleParams	Identifier
-    
+
 	HiLink cf3Body			Statement
 	HiLink cf3BodyTypes		Statement
     HiLink cf3Comment	    Comment
-	
+
 	HiLink cf3BodyControl	Statement
 	HiLink cf3BodyControlTypes	Statement
 	HiLink cf3BodyControlName	Statement
-    
+
     HiLink cf3Action	   Underlined
     HiLink cf3Class         cf3Context
 
@@ -445,7 +448,78 @@ if version >= 508 || !exists("did_cfg_syn_inits")
 endif
 let b:current_syntax = "cf3"
 
-set foldmethod=syntax
+" }}}
+
+" Folding {{{
+
+function! CF3Folds()
+  let line = getline(v:lnum)
+
+  " Don't include blank lines in previous fold {{{
+  if line =~? '\v^\s*$'
+    return '-1'
+  endif
+  " }}}
+
+  " Don't include comments in the previous fold {{{
+  if line =~? '\v^\s*#.*$'
+    return '-1'
+  endif
+  " }}}
+
+  " Fold bodies/bundles {{{
+  let body_types = [
+        \"^bundle",
+        \"^body"
+        \ ]
+  for type in body_types
+    if line =~ type
+      return ">1"
+    endif
+  endfor
+  " }}}
+
+  " Fold promises {{{
+  let promise_types = [
+        \"meta:",
+        \"vars:",
+        \"defaults:",
+        \"classes:",
+        \"users:",
+        \"files:",
+        \"packages:",
+        \"guest_environments:",
+        \"methods:",
+        \"processes:",
+        \"services:",
+        \"commands:",
+        \"storage:",
+        \"databases:",
+        \"access:",
+        \"roles:",
+        \"measurements:",
+        \"reports:",
+        \ ]
+  for promise_type in promise_types
+    if line =~ promise_type
+      return ">2"
+    endif
+  endfor
+  " }}}
+
+  " TODO:
+  " - fold lists
+  " - include trailing }'s in fdl 1
+
+  " If nothing matches, keep the previous foldlevel
+  return '='
+
+endfunction
+
+setlocal foldmethod=expr
+setlocal foldexpr=CF3Folds()
+
+" }}}
 
 " CREDITS
 " Neil Watson <neil@watson-wilson.ca>
@@ -453,18 +527,19 @@ set foldmethod=syntax
 " John Coleman of Yale U
 " Matt Lesko
 " Ivan Pesin
+" Zach Himsel
 "
 " vim_cf3 files (https://github.com/neilhwatson/vim_cf3)
 " Copyright (C) 2011 Neil H. Watson <neil@watson-wilson.ca>
-" 
+"
 " This program is free software: you can redistribute it and/or modify it under
 " the terms of the GNU General Public License as published by the Free Software
 " Foundation, either version 3 of the License, or (at your option) any later
 " version.
-" 
+"
 " This program is distributed in the hope that it will be useful, but WITHOUT ANY
 " WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
 " PARTICULAR PURPOSE.  See the GNU General Public License for more details.
-" 
+"
 " You should have received a copy of the GNU General Public License along with
 " this program.  If not, see <http://www.gnu.org/licenses/>.
