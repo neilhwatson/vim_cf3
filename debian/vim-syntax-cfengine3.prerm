@@ -1,0 +1,19 @@
+#!/bin/sh -e
+
+case "$1" in
+    remove|deconfigure)
+        /usr/bin/vim-addon-manager -w remove cfengine3
+    ;;
+    upgrade)
+    ;;
+
+    failed-upgrade)
+    ;;
+
+    *)
+	echo "prerm called with unknown argument \`$1'" >&2
+	exit 0
+    ;;
+esac
+
+exit 0

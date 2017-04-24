@@ -1,0 +1,5 @@
+addon: cfengine3
+description: "Addon to highlight CFEngine3"
+files:
+  - syntax/cf3.vim
+  - ftdetect/cf3.vim
