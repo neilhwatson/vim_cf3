@@ -1,0 +1,33 @@
+vim-syntax-cfengine3 (20170424+nmu1) unstable; urgency=medium
+
+  * Renamed files
+
+ -- Michal Svamberg <svamberg@civ.zcu.cz>  Mon, 24 Apr 2017 20:46:09 +0200
+
+vim-syntax-cfengine3 (20170424) unstable; urgency=medium
+
+  * Upload new version
+
+ -- Michal Švamberg <svamberg@civ.zcu.cz>  Mon, 24 Apr 2017 20:36:14 +0200
+
+vim-syntax-cfengine3 (20140402+nmu3) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Fix loading syntax file
+  * Move syntax file from /usr/share/ to /var/lib/ 
+
+ -- Michal Švamberg <svamberg@civ.zcu.cz>  Wed, 04 Feb 2015 17:03:14 +0100
+
+vim-syntax-cfengine3 (20140402+nmu1) unstable; urgency=low
+
+  * get new version from
+  * change destination path of syntax file 
+
+ -- Michal Švamberg <svamberg@civ.zcu.cz>  Wed, 04 Feb 2015 16:16:24 +0100
+
+vim-syntax-cfengine3 (1.0.0) unstable; urgency=low
+
+  * get upstream
+
+ -- Michal Švamberg <svamberg@civ.zcu.cz>  Thu, 25 Jun 2013 02:00:43 +0200
+

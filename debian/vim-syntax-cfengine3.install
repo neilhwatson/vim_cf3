@@ -1,0 +1,4 @@
+ftdetect/cf3.vim                        usr/share/vim/addons/ftdetect/
+syntax/cf3.vim                          usr/share/vim/addons/syntax/
+registry/vim-syntax-cfengine3.yaml      usr/share/vim/registry/
+
