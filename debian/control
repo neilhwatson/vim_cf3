@@ -1,7 +1,7 @@
 Source: vim-syntax-cfengine3
 Section: editors
 Priority: optional
-Maintainer: Michal Švamberg <svamberg@civ.zcu.cz>
+Maintainer: Michal Svamberg <svamberg@civ.zcu.cz>
 Build-Depends: debhelper (>= 8.0.0)
 Standards-Version: 3.9.3
 
