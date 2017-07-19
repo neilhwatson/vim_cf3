@@ -1,3 +1,9 @@
+vim-syntax-cfengine3 (20170719+nmu1) unstable; urgency=medium
+
+  * Fix lintian warnings
+
+ -- Michal Svamberg <svamberg@civ.zcu.cz>  Wed, 19 Jul 2017 13:46:09 +0200
+
 vim-syntax-cfengine3 (20170424+nmu1) unstable; urgency=medium
 
   * Renamed files
