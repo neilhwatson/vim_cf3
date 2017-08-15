@@ -7,7 +7,7 @@ case "$1" in
                 vim-addon-manager -w install cfengine3
 	;;
 	*)
-		echo "postinst called with unknown argument \`$1'" >&2
+		echo "postinst called with unknown argument '$1'" >&2
 		exit 1
 	;;
 esac

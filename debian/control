@@ -3,11 +3,14 @@ Section: editors
 Priority: optional
 Maintainer: Michal Svamberg <svamberg@civ.zcu.cz>
 Build-Depends: debhelper (>= 8.0.0)
-Standards-Version: 3.9.3
+Homepage: https://github.com/neilhwatson/vim_cf3
 
 Package: vim-syntax-cfengine3
 Architecture: all
 Depends: ${misc:Depends}, vim-common, vim-addon-manager
 Description: CFEngine3 syntax for Vim
- This is CFEngine3 syntax file for highlighting of .cf configuration files.
+ This is CFEngine3 syntax file, it supported
+  * syntax highlighting
+  * abbreviations
+  * ready to use code templates
 
