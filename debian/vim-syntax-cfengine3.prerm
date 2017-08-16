@@ -2,7 +2,7 @@
 
 case "$1" in
     remove|deconfigure)
-        /usr/bin/vim-addon-manager -w remove cfengine3
+        vim-addon-manager -w remove cfengine3
     ;;
     upgrade)
     ;;
@@ -11,7 +11,7 @@ case "$1" in
     ;;
 
     *)
-	echo "prerm called with unknown argument \`$1'" >&2
+	echo "prerm called with unknown argument '$1'" >&2
 	exit 0
     ;;
 esac
