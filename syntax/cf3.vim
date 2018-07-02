@@ -3,7 +3,7 @@
 " Vim syntax file
 " Language:     Cfengine version 3
 " Maintainer:   Neil Watson <neil@watson-wilson.ca>
-" Last Change:  Jul 21 2012
+" Last Change:  Jun 02 2018
 " Location:
 "
 " TODO:
@@ -79,87 +79,168 @@ syn keyword cf3Type			string int real slist ilist rlist data
 " The following list may be automatically generated using
 " tools/extract_cf3BuiltIns.sh
 
-" Last update: 2016/11/28 - git tag 571987454f0d3814b4f7ed141759d4a7c3d2c635
+" Last update: 2018/06/02 - git tag 0d9d2ce30b91cb0a3d09d2b8b517b39e876dc7f3
 
-syn keyword cf3BuiltIns	accessedbefore accumulated ago and bundlesmatching contained
-syn keyword cf3BuiltIns	bundlestate callstack_callers callstack_promisers canonify canonifyuniquely changedbefore contained
-syn keyword cf3BuiltIns	classesmatching classify classmatch concat countclassesmatching countlinesmatching contained
-syn keyword cf3BuiltIns	data_expand data_readstringarray data_readstringarrayidx data_regextract datastate difference contained
-syn keyword cf3BuiltIns	dirname diskfree escape eval every execresult contained
-syn keyword cf3BuiltIns	expandrange file_hash fileexists filesexist filesize filestat contained
-syn keyword cf3BuiltIns	filter findfiles findprocesses format getclassmetatags getenv contained
-syn keyword cf3BuiltIns	getfields getgid getindices getuid getuserinfo getusers contained
-syn keyword cf3BuiltIns	getvalues getvariablemetatags grep groupexists hash hashmatch contained
-syn keyword cf3BuiltIns	host2ip hostinnetgroup hostrange hostsseen hostswithclass hubknowledge contained
-syn keyword cf3BuiltIns	ifelse intersection ip2host iprange irange isdir contained
-syn keyword cf3BuiltIns	isexecutable isgreaterthan isipinsubnet islessthan islink isnewerthan contained
-syn keyword cf3BuiltIns	isplain isvariable join lastnode laterthan ldaparray contained
-syn keyword cf3BuiltIns	ldaplist ldapvalue length lsdir makerule maparray contained
-syn keyword cf3BuiltIns	mapdata maplist max mean mergedata min contained
-syn keyword cf3BuiltIns	network_connections none not now nth on contained
-syn keyword cf3BuiltIns	or packagesmatching packageupdatesmatching parseintarray parsejson parserealarray contained
-syn keyword cf3BuiltIns	parsestringarray parsestringarrayidx parseyaml peerleader peerleaders peers contained
-syn keyword cf3BuiltIns	processexists product randomint readcsv readdata readfile contained
-syn keyword cf3BuiltIns	readintarray readintlist readjson readrealarray readreallist readstringarray contained
-syn keyword cf3BuiltIns	readstringarrayidx readstringlist readtcp readyaml regarray regcmp contained
-syn keyword cf3BuiltIns	regex_replace regextract registryvalue regldap regline reglist contained
-syn keyword cf3BuiltIns	remoteclassesmatching remotescalar returnszero reverse rrange selectservers contained
-syn keyword cf3BuiltIns	shuffle some sort splayclass splitstring storejson contained
-syn keyword cf3BuiltIns	strcmp strftime string_downcase string_head string_length string_mustache contained
-syn keyword cf3BuiltIns	string_reverse string_split string_tail string_upcase sublist sum contained
-syn keyword cf3BuiltIns	translatepath unique url_get usemodule userexists variablesmatching contained
-syn keyword cf3BuiltIns	variablesmatching_as_data contained
+syn keyword cf3BuiltIns	access accessedbefore accumulated active_directory additional-resources contained
+syn keyword cf3BuiltIns	adjusting-schedules adopting-cfengine agility ago alerts-custom-actions alerts-notifications contained
+syn keyword cf3BuiltIns	all-types and application-management architecture-design augments authoring-policy-tools-and-workflow contained
+syn keyword cf3BuiltIns	backup-and-restore basic-file-directory best-practices bodies browsing-host-information build-deploy-manage-audit contained
+syn keyword cf3BuiltIns	bundles bundles-best-practices bundlesmatching bundlestate callstack_callers callstack_promisers contained
+syn keyword cf3BuiltIns	canonify canonifyuniquely cf-agent cfe_internal cfe_internal-CFE_cfengine cfe_internal-core contained
+syn keyword cf3BuiltIns	cfe_internal-enterprise cfe_internal-update cfe_internal-update-cfe_internal_dc_workflow cfe_internal-update-cfe_internal_local_git_remote cfe_internal-update-cfe_internal_update_from_repository cfe_internal-update-lib contained
+syn keyword cf3BuiltIns	cfe_internal-update-systemd_units cfe_internal-update-update_bins cfe_internal-update-update_policy cfe_internal-update-update_processes cfengine-administration cf-execd contained
+syn keyword cf3BuiltIns	cf-hub cf-key cf-monitord cf-net cf-promises cf-runagent contained
+syn keyword cf3BuiltIns	cf-serverd changedbefore changelog-core changelog-enterprise changelog-masterfiles-policy-framework change-management contained
+syn keyword cf3BuiltIns	changes changes-api-usage cheatsheet checking-status classes classes contained
+syn keyword cf3BuiltIns	classesmatching classify classmatch cloud-computing command-line-reports commands contained
+syn keyword cf3BuiltIns	commands-scripts-execution common-attributes-include common-body-attributes-include common_next_steps components concat contained
+syn keyword cf3BuiltIns	connection const content-driven-policy controlling-frequency controls controls-cf_agent contained
+syn keyword cf3BuiltIns	controls-cf_execd controls-cf-hub controls-cf_monitord controls-cf_runagent controls-cf_serverd controls-def contained
+syn keyword cf3BuiltIns	controls-def_inputs controls-reports controls-update_def controls-update_def_inputs countclassesmatching countlinesmatching contained
+syn keyword cf3BuiltIns	custom-https-certificate custom_inventory custom-ldap-port custom-ldaps-certificate database databases contained
+syn keyword cf3BuiltIns	data_expand data_readstringarray data_readstringarrayidx data_regextract datastate data_sysctlvalues contained
+syn keyword cf3BuiltIns	debugging-mission-portal def defaults delete_lines devops difference contained
+syn keyword cf3BuiltIns	directory-structure dirname diskfree distributed-scheduling distribute-files-from-a-central-location edit contained
+syn keyword cf3BuiltIns	edit_line edit_xml enable-plain-http enterprise enterprise-api enterprise-api-examples contained
+syn keyword cf3BuiltIns	enterprise-api-ref enterprise-cfengine-guide enterprise-license enterprise-report-collection enterprise-report-filtering escape contained
+syn keyword cf3BuiltIns	eval every example_aborting_execution example_change_detection example_copy_single_files example_create_filedir contained
+syn keyword cf3BuiltIns	example_diskfree example_edit_motd example_edit_name_resolution example_enable_service example_find_mac_addr example_install_package contained
+syn keyword cf3BuiltIns	example_mount_nfs example_ntp example_process_kill example_process_restart examples example-snippets contained
+syn keyword cf3BuiltIns	example_ssh_keys example_sudoers example_updating_from_central_hub execresult expandrange external_data contained
+syn keyword cf3BuiltIns	faq fhs field_edits file_comparison file-content file_control_promises contained
+syn keyword cf3BuiltIns	fileexists file_hash file_permissions files filesexist filesize contained
+syn keyword cf3BuiltIns	filestat files-tutorial file-template filter findfiles findprocesses contained
+syn keyword cf3BuiltIns	find-public-key-for-host-sha fix-trust-after-ip-change fix-undefined-body-error format functions general contained
+syn keyword cf3BuiltIns	general-installation getclassmetatags getenv getfields getgid getindices contained
+syn keyword cf3BuiltIns	getuid getuserinfo getusers getvalues getvariablemetatags glossary contained
+syn keyword cf3BuiltIns	glossary grep groupexists guest_environments guide hash contained
+syn keyword cf3BuiltIns	hashmatch hash_to_int hierarchies high-availability host host2ip contained
+syn keyword cf3BuiltIns	hostinnetgroup hostrange hosts-health hostsseen hostswithclass hub_administration contained
+syn keyword cf3BuiltIns	hubknowledge ifelse include-install-bootstrap-configure-summary index insert_lines installation-and-configuration contained
+syn keyword cf3BuiltIns	installation-community installation-enterprise installation-enterprise-free installation-enterprise-free-aws-rhel installation-enterprise-generic-tarball installation-enterprise-vagrant contained
+syn keyword cf3BuiltIns	installation-guide install-get-started intersection introduction inventory inventory contained
+syn keyword cf3BuiltIns	inventory-any inventory-debian inventory-freebsd inventory-generic inventory-linux inventory-lsb contained
+syn keyword cf3BuiltIns	inventory-macos inventory-os inventory-redhat inventory-suse inventory-windows ip2host contained
+syn keyword cf3BuiltIns	iprange irange isdir isexecutable isgreaterthan isipinsubnet contained
+syn keyword cf3BuiltIns	islessthan islink isnewerthan isplain isvariable iteration contained
+syn keyword cf3BuiltIns	itil join json-yaml-support-in-cfengine known-issues language-concepts lastnode contained
+syn keyword cf3BuiltIns	laterthan latest-release ldap-api ldaparray ldaplist ldapvalue contained
+syn keyword cf3BuiltIns	learn legal length lib lib-autorun lib-bundles contained
+syn keyword cf3BuiltIns	lib-cfe_internal lib-cfe_internal_hub lib-cfengine_enterprise_hub_ha lib-commands lib-common lib-databases contained
+syn keyword cf3BuiltIns	lib-edit_xml lib-event lib-examples lib-feature lib-files lib-guest_environments contained
+syn keyword cf3BuiltIns	lib-monitor lib-packages lib-paths lib-processes lib-reports lib-services contained
+syn keyword cf3BuiltIns	lib-stdlib lib-storage lib-testing lib-users lib-vcs line_editing contained
+syn keyword cf3BuiltIns	lookup-license-info loops lsdir macros makerule managing-settings contained
+syn keyword cf3BuiltIns	managing-users-and-roles manual-execution maparray mapdata maplist masterfiles-policy-framework contained
+syn keyword cf3BuiltIns	masterfiles_policy_framework_upgrade match max mean measurements mergedata contained
+syn keyword cf3BuiltIns	meta methods min modularity mon monitoring contained
+syn keyword cf3BuiltIns	monitoring-reporting mustache-templating namespaces network network_connections networking contained
+syn keyword cf3BuiltIns	nfs_and_containers none normal-ordering not now nth contained
+syn keyword cf3BuiltIns	on open-nebula or orchestration output-email package_bundles contained
+syn keyword cf3BuiltIns	package_modules packages packages-deprecated packagesmatching packageupdatesmatching parseintarray contained
+syn keyword cf3BuiltIns	parsejson parserealarray parsestringarray parsestringarrayidx parseyaml pattern-matching-and-referencing contained
+syn keyword cf3BuiltIns	peerleader peerleaders peers policy-deployment policy-framework policy-layers-abstraction contained
+syn keyword cf3BuiltIns	policy-style pre-installation-checklist processes processexists product promise-patterns contained
+syn keyword cf3BuiltIns	promises promises promises-available-in-cfengine promise-types putty-quick-start-guide query contained
+syn keyword cf3BuiltIns	randomint readcsv readdata readenvfile readfile readintarray contained
+syn keyword cf3BuiltIns	readintlist readjson readrealarray readreallist readstringarray readstringarrayidx contained
+syn keyword cf3BuiltIns	readstringlist readtcp readyaml reference regarray regcmp contained
+syn keyword cf3BuiltIns	regenerate-self-signed-cert regex_replace regextract registryvalue regldap regline contained
+syn keyword cf3BuiltIns	reglist reinstall remoteclassesmatching remotescalar replace_patterns reporting contained
+syn keyword cf3BuiltIns	reporting reporting-architecture reporting_ui report_inventory_remediate_sec_vulnerabilities reports reset-admin-creds contained
+syn keyword cf3BuiltIns	returnszero reverse roles rrange search secure-bootstrap contained
+syn keyword cf3BuiltIns	security-overview selectservers services services services-autorun services-main contained
+syn keyword cf3BuiltIns	settings show-classes-and-vars shuffle software-adminstration some sort contained
+syn keyword cf3BuiltIns	special-topics special-variables splayclass splitstring sql-queries sql-queries-enterprise-api contained
+syn keyword cf3BuiltIns	sql-schema status-settings stigs storage storejson strcmp contained
+syn keyword cf3BuiltIns	strftime string_downcase string_head string_length string_mustache string_reverse contained
+syn keyword cf3BuiltIns	string_split string_tail string_upcase sublist sum supported-platforms contained
+syn keyword cf3BuiltIns	sys sysctlvalue system-administration system-file system-information system-security contained
+syn keyword cf3BuiltIns	tags teamwork testing-policies this timing-counting-measuring translatepath contained
+syn keyword cf3BuiltIns	tutorials unable-to-log-in-mission-portal uninstall-reinstall unique update upgrading contained
+syn keyword cf3BuiltIns	url_get usemodule userexists user-interface user-management users contained
+syn keyword cf3BuiltIns	users users-rbac variables variables variablesmatching variablesmatching_as_data contained
+syn keyword cf3BuiltIns	variance vars version-control vi-quick-start-guide what-did-cfengine-change what-is-promise-locking contained
+syn keyword cf3BuiltIns	whatsnew why-are-files-not-being-distributed why-are-remote-agents-not-updating windows-registry contained
 
 " The following list may be automatically generated using
 " tools/extract_cf3evolve_freelib.sh
 
-" Last update: 2013/10/10 - git tag 1a04f9b6e461efff5869f1d3b59ab09c8115775e
+" Last update: 2018/06/02 - git tag d9d8bc814a70b64f5fb0fca0104f9802c4a7d88b
 
-syn keyword cf3Evolve_freelib   by_command by_pid contain_efl_command efl_bug2638 efl_bug3430 contained
-syn keyword cf3Evolve_freelib  efl_c efl_chkconfig_disable_service efl_chkconfig_enable_service efl_class_classmatch efl_class_cmd_regcmp efl_class_hostname contained
-syn keyword cf3Evolve_freelib  efl_class_iprange efl_command efl_copy_files efl_cpf efl_delete_files efl_delta_reporting contained
-syn keyword cf3Evolve_freelib  efl_edit_template efl_file_perms efl_global_strings efl_lastseen efl_link efl_main contained
-syn keyword cf3Evolve_freelib  efl_mon_cfengine efl_notseen efl_packages efl_rkn efl_service efl_skeleton contained
-syn keyword cf3Evolve_freelib  efl_source_type efl_start_service efl_sysctl_conf_file efl_sysctl_live el_efl_sysctl_conf_file name_age_negate contained
-syn keyword cf3Evolve_freelib  negate_by_name contained
+syn keyword cf3Evolve_freelib	 by_command by_command contain_efl_command contain_efl_command efl_command contained
+syn keyword cf3Evolve_freelib	efl_command efl_copy_files efl_copy_files efl_cpf efl_cpf efl_delete_files contained
+syn keyword cf3Evolve_freelib	efl_delete_files efl_delta_reporting efl_delta_reporting efl_disable_service efl_disable_service efl_dump_strings contained
+syn keyword cf3Evolve_freelib	efl_dump_strings efl_edit_template efl_edit_template efl_empty efl_empty efl_enable_service contained
+syn keyword cf3Evolve_freelib	efl_enable_service efl_file_perms efl_file_perms efl_kill_process efl_kill_process efl_kill_process contained
+syn keyword cf3Evolve_freelib	efl_kill_process efl_lastseen efl_lastseen efl_link efl_link efl_mon_cfengine contained
+syn keyword cf3Evolve_freelib	efl_mon_cfengine efl_notseen efl_notseen efl_packages efl_packages efl_packages_new contained
+syn keyword cf3Evolve_freelib	efl_packages_new efl_packages_via_cmd efl_packages_via_cmd efl_process_count efl_process_count efl_rcs_pull contained
+syn keyword cf3Evolve_freelib	efl_rcs_pull efl_recurse_and_exclude efl_recurse_and_exclude efl_rkn efl_rkn efl_server_csv contained
+syn keyword cf3Evolve_freelib	efl_server_csv efl_server_json efl_server_json efl_service efl_service efl_service_recurse contained
+syn keyword cf3Evolve_freelib	efl_service_recurse efl_source_type efl_source_type efl_start_service efl_start_service efl_sysctl_conf_file contained
+syn keyword cf3Evolve_freelib	efl_sysctl_conf_file efl_sysctl_live efl_sysctl_live efl_test_classes efl_test_classes efl_test_count contained
+syn keyword cf3Evolve_freelib	efl_test_count efl_test_vars efl_test_vars el_efl_sysctl_conf_file el_efl_sysctl_conf_file name_age_negate contained
+syn keyword cf3Evolve_freelib	name_age_negate negate_by_name negate_by_name contained
 
 " The following list may be automatically generated using
 " tools/extract_cf3Stdlib.sh
 
-" Last update: 2013/10/10 - git tag 70d7a24a9a67512ef820ff4669c14fd0809862e3
+" Last update: 2018/06/02 - git tag 9ff3f394a2b0435549ce17e595edb295a92e53b7
 
 syn keyword cf3Stdlib	 INI_section access_generic after all all_changes contained
 syn keyword cf3Stdlib	alpinelinux always any_count append_groups_starting append_if_no_line append_if_no_lines contained
-syn keyword cf3Stdlib	append_to_line_end append_user_field append_users_starting apt apt_get apt_get_release contained
-syn keyword cf3Stdlib	backup_local_cp backup_timestamp before bg bigger_than bootstart contained
-syn keyword cf3Stdlib	brew by_name by_owner cf2_if_else check_range classes_generic contained
-syn keyword cf3Stdlib	cmd_repair col comment comment_lines_containing comment_lines_matching common_knowledge contained
-syn keyword cf3Stdlib	control create_solaris_admin_file cronjob darwin_knowledge days_old days_older_than contained
-syn keyword cf3Stdlib	debian_knowledge delete_lines_matching detect_all_change detect_all_change_using detect_content detect_content_using contained
-syn keyword cf3Stdlib	diff diff_noupdate dirs disable dpkg_version emerge contained
-syn keyword cf3Stdlib	empty enumerate ex_list exclude exclude_procs expand_template contained
-syn keyword cf3Stdlib	feature feature_cancel feature_test fileinfo filetype_older_than filetypes_older_than contained
-syn keyword cf3Stdlib	force_deps freebsd freebsd_portmaster generic if_elapsed if_elapsed_day contained
+syn keyword cf3Stdlib	append_to_line_end append_user_field append_users_starting apt apt_get apt_get contained
+syn keyword cf3Stdlib	apt_get_permissive apt_get_release autorun backup_local_cp backup_timestamp before contained
+syn keyword cf3Stdlib	bg bigger_than bootstart brew bundles_common by_name contained
+syn keyword cf3Stdlib	by_owner by_pid cat cf2_if_else cfe_internal_cleanup_agent_reports cfe_internal_common contained
+syn keyword cf3Stdlib	cfe_internal_database_cleanup_consumer_status cfe_internal_database_cleanup_diagnostics cfe_internal_database_cleanup_promise_log cfe_internal_database_cleanup_reports cfe_internal_database_partitioning cfe_internal_hub_common contained
+syn keyword cf3Stdlib	cfe_internal_hub_maintain cfe_internal_postgresql_maintenance cfe_internal_postgresql_vacuum cfengine_enterprise_hub_ha check_range classes_generic contained
+syn keyword cf3Stdlib	classic_services cmd_repair cmerge col collect_vars comment contained
+syn keyword cf3Stdlib	comment_lines_containing comment_lines_matching common_knowledge contains_literal_string control converge contained
+syn keyword cf3Stdlib	copyfrom_sync create_solaris_admin_file cronjob daemonize darwin_knowledge days_old contained
+syn keyword cf3Stdlib	days_older_than debian_knowledge delete_lines_matching detect_all_change detect_all_change_using detect_content contained
+syn keyword cf3Stdlib	detect_content_using diff diff_noupdate diff_results dir_sync dirs contained
+syn keyword cf3Stdlib	disable dpkg_version emerge empty enumerate event_cancel_events contained
+syn keyword cf3Stdlib	event_debug_handler event_handle event_install_handler event_register event_usage_example ex_list contained
+syn keyword cf3Stdlib	exclude exclude_procs expand_template feature feature_cancel feature_test contained
+syn keyword cf3Stdlib	file_copy file_empty file_hardlink file_link file_make file_make_mog contained
+syn keyword cf3Stdlib	file_make_mustache file_make_mustache_with_perms file_mustache file_mustache_jsonstring file_tidy fileinfo contained
+syn keyword cf3Stdlib	files_common filetype_older_than filetypes_older_than force_deps freebsd freebsd_portmaster contained
+syn keyword cf3Stdlib	freebsd_ports fstab_option_editor fstab_options generic git git_add contained
+syn keyword cf3Stdlib	git_checkout git_checkout_new_branch git_clean git_commit git_init git_stash contained
+syn keyword cf3Stdlib	git_stash_and_clean hashed_password head head_n if_elapsed if_elapsed_day contained
 syn keyword cf3Stdlib	if_else if_notkept if_ok if_ok_cancel if_repaired ifwin_bg contained
 syn keyword cf3Stdlib	immediate in_dir in_dir_shell in_dir_shell_and_silent in_shell in_shell_and_silent contained
-syn keyword cf3Stdlib	in_shell_bg include_base insert_file insert_lines ips jail contained
-syn keyword cf3Stdlib	kvm line line_match_value linkchildren ln_s local_cp contained
-syn keyword cf3Stdlib	local_dcp local_mysql local_postgresql log_repaired log_verbose logrotate contained
-syn keyword cf3Stdlib	m maintain_key_values manage_variable_values_ini measure_performance min_free_space mo contained
+syn keyword cf3Stdlib	in_shell_bg include_base insert_before_if_no_line insert_file insert_ini_section insert_lines contained
+syn keyword cf3Stdlib	ips jail kept_successful_command kvm line line_match_value contained
+syn keyword cf3Stdlib	lines_present linkchildren linkfrom ln_s local_cp local_dcp contained
+syn keyword cf3Stdlib	local_mysql local_postgresql log_repaired log_verbose logrotate m contained
+syn keyword cf3Stdlib	maintain_key_values manage_variable_values_ini measure_performance measure_promise_time min_free_space mo contained
 syn keyword cf3Stdlib	mog msi_explicit msi_implicit name_age nfs nfs_p contained
-syn keyword cf3Stdlib	no_backup no_backup_cp no_backup_dcp no_backup_rcp noupdate ntfs contained
-syn keyword cf3Stdlib	og older_than opencsw owner pacman paths contained
-syn keyword cf3Stdlib	perms_cp plain policy prunedir quoted_var recurse contained
-syn keyword cf3Stdlib	recurse_ignore recurse_with_base redhat_knowledge regex_replace remote_cp remote_dcp contained
-syn keyword cf3Stdlib	replace_line_end replace_or_add resolvconf resolvconf_o rm_rf rm_rf_depth contained
-syn keyword cf3Stdlib	rotate rpm_filebased rpm_version sample_rate scan_changing_file scan_log contained
-syn keyword cf3Stdlib	scoped_classes_generic secure_cp seed_cp set_colon_field set_config_values set_config_values_matching contained
-syn keyword cf3Stdlib	set_quoted_values set_user_field set_variable_values set_variable_values_ini setuid setuid_sh contained
-syn keyword cf3Stdlib	setuid_umask setuidgid_sh silent silent_in_dir single_value size_range contained
-syn keyword cf3Stdlib	smartos solaris standard_services start state_repaired std_defs contained
-syn keyword cf3Stdlib	strict sync_cp tidy to uncomment uncomment_lines_containing contained
-syn keyword cf3Stdlib	uncomment_lines_matching unmount value warn_lines_matching warn_only windows_feature contained
-syn keyword cf3Stdlib	yum yum_group yum_rpm yum_rpm_enable_repo zypper contained
+syn keyword cf3Stdlib	nimclient no_backup no_backup_cp no_backup_dcp no_backup_rcp noupdate contained
+syn keyword cf3Stdlib	npm npm_g npm_knowledge ntfs og older_than contained
+syn keyword cf3Stdlib	opencsw owner package_absent package_latest package_module_knowledge package_present contained
+syn keyword cf3Stdlib	package_specific package_specific_absent package_specific_latest package_specific_present packages_common pacman contained
+syn keyword cf3Stdlib	paths perms_cp perms_dcp pip pip_knowledge pkg contained
+syn keyword cf3Stdlib	pkgsrc plain plaintext_password policy prepend_if_no_line probabilistic_usebundle contained
+syn keyword cf3Stdlib	process_kill prunedir prunetree quoted_var recurse recurse_ignore contained
+syn keyword cf3Stdlib	recurse_with_base redhat_knowledge redhat_no_locking_knowledge regex_replace remote_cp remote_dcp contained
+syn keyword cf3Stdlib	replace_line_end replace_or_add resolvconf resolvconf_o results rm_rf contained
+syn keyword cf3Stdlib	rm_rf_depth rotate rpm_filebased rpm_knowledge rpm_version run_ifdefined contained
+syn keyword cf3Stdlib	sample_rate scan_changing_file scan_log scoped_classes_generic secure_cp seed_cp contained
+syn keyword cf3Stdlib	services_common set_colon_field set_config_values set_config_values_matching set_line_based set_quoted_values contained
+syn keyword cf3Stdlib	set_user_field set_variable_values set_variable_values_ini setuid setuid_gid_umask setuid_sh contained
+syn keyword cf3Stdlib	setuid_umask setuidgid_dir setuidgid_sh silent silent_in_dir single_value contained
+syn keyword cf3Stdlib	size_range slackpkg smartos smartos_pkg_add solaris solaris_install contained
+syn keyword cf3Stdlib	solaris_knowledge standard_services standard_services start state_repaired std_defs contained
+syn keyword cf3Stdlib	stdlib_common strict suse_knowledge symlinked_to sync_cp system_owned contained
+syn keyword cf3Stdlib	testing_generic_report testing_junit_report testing_ok testing_ok_if testing_skip testing_tap_bailout contained
+syn keyword cf3Stdlib	testing_tap_report testing_todo testing_usage_example tidy to u_kept_successful_command contained
+syn keyword cf3Stdlib	uncomment uncomment_lines_containing uncomment_lines_matching unmount url_ping value contained
+syn keyword cf3Stdlib	vcs_common warn_lines_matching warn_only windows_feature xml_insert_tree xml_insert_tree_nopath contained
+syn keyword cf3Stdlib	xml_set_attribute xml_set_value yum yum yum_group yum_rpm contained
+syn keyword cf3Stdlib	yum_rpm_enable_repo yum_rpm_permissive zypper zypper contained
 
 "syn	match	cf3Function		/\w\+[,;(\>]/ contains=cf3BuiltIns,cf3Stdlib
 syn	match	cf3Function		/\<\w\+[,;()]/ contains=cf3BuiltIns,cf3Stdlib,cf3Evolve_freelib
