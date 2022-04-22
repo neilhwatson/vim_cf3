@@ -45,7 +45,7 @@ function! EnableCFE3KeywordAbbreviations()
     iab <buffer> met methods:
     iab <buffer> pro processes:
     iab <buffer> rep reports:
-    iab <buffer> sli slist => {
+    iab <buffer> sli slist => { }<Left><Left>
     iab <buffer> str string => "<C-R>=Eatchar('\s')<CR>
     iab <buffer> sysw ${sys.workdir}
     iab <buffer> ub usebundle =>
@@ -186,6 +186,9 @@ nnoremap <buffer> ,s :call Pastefile("stdlib.cf")<CR>kdd
 " Other Cfengine information: http://watson-wilson.ca/cfengine/
 "
 " CHANGES
+" Friday April 22 2022
+" - Added closing curly brace '}' to slist IAB in order to prevent errors when plugin is loaded by SpaceVim
+"
 " Wednesday January 09 2013 
 " Operator alignment now works for just '=>' with ',=' or 'string, stlist ,etc
 " and => ' with '<ESC>='
